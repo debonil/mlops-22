@@ -60,14 +60,21 @@ n_samples = len(digits.images)
 data = digits.images.reshape((n_samples, -1))
 
 # Split data into 50% train and 50% test subsets
-X_train, X_test, y_train, y_test = train_test_split(
-    data, digits.target, test_size=0.5, shuffle=False
+X_train, X_dev_test, y_train, y_dev_test = train_test_split(
+    data, digits.target, test_size=0.2, shuffle=False
 )
+X_dev, X_test, y_dev, y_test = train_test_split(
+    X_dev_test, y_dev_test, test_size=0.5, shuffle=False
+)
+
+
 # Create a classifier: a support vector classifier
-parameters = {'Gamma': [0.00001,0.0001,0.001,0.01,0.1,0.5, 1], 
-              'C': [0.1, 0.4, 0.8, 1, 2, 5,10,50,100]}
-best_acc=-1
+parameters = {'Gamma': [0.00001,0.0001,0.001,0.01], 
+              'C': [ 1, 2, 5,10,50,100]}
+best_acc=[-1,-1,-1]
 best_model = None
+
+print(f"Classifier \t\t\t\t\t\t\t|\t Train Acc \t|\t Dev Acc \t|\t Test Acc \n")
 for GAMMA in parameters['Gamma']:
     for C in parameters['C']:
 
@@ -80,12 +87,16 @@ for GAMMA in parameters['Gamma']:
         clf.fit(X_train, y_train)
 
         # Predict the value of the digit on the test subset
-        predicted = clf.predict(X_test)
-        acc= metrics.accuracy_score(y_test, predicted)
-        print(f"Classification accuracy for classifier {clf}:" f"{acc}\n")
-        if acc > best_acc:
-            best_acc = acc
+        pred_dev = clf.predict(X_dev)
+        acc_dev= metrics.accuracy_score(y_dev, pred_dev)
+        pred_test = clf.predict(X_test)
+        acc_test= metrics.accuracy_score(y_test, pred_test)
+        pred_train = clf.predict(X_train)
+        acc_train= metrics.accuracy_score(y_train, pred_train)
+
+        print(f"{clf}\t\t\t\t\t\t\t {acc_train*100:.3f}\t\t\t {acc_dev*100:.3f}\t\t\t {acc_test*100:.3f}")
+        if acc_dev > best_acc[1]:
+            best_acc = [acc_train,acc_dev,acc_test]
             best_model = hyper_params
 
-print(f"Best Classification accuracy for classifier {best_model}:" f"{best_acc}\n"           
-)
+print(f"\nBest Classification accuracy for classifier {best_model}: \tTrain Acc:{best_acc[0]*100:.2f};\tDev Acc:{best_acc[1]*100:.2f};\tTest Acc:{best_acc[2]*100:.2f};\n")
