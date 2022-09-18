@@ -1,0 +1,33 @@
+Input Image size: 	(8, 8)
+
+Image resized to: 	(4, 4)
+
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=1, gamma=1e-05)							 19.903			 18.889			 16.667
+SVC(C=2, gamma=1e-05)							 44.050			 40.556			 43.333
+SVC(C=5, gamma=1e-05)							 76.479			 73.333			 75.556
+SVC(C=10, gamma=1e-05)							 82.463			 76.667			 76.667
+SVC(C=50, gamma=1e-05)							 88.587			 83.333			 80.000
+SVC(C=100, gamma=1e-05)							 91.093			 86.667			 81.111
+SVC(C=1, gamma=0.0001)							 82.603			 76.667			 76.667
+SVC(C=2, gamma=0.0001)							 85.665			 83.333			 76.667
+SVC(C=5, gamma=0.0001)							 88.935			 84.444			 81.667
+SVC(C=10, gamma=0.0001)							 91.301			 87.778			 81.667
+SVC(C=50, gamma=0.0001)							 94.781			 88.889			 83.333
+SVC(C=100, gamma=0.0001)							 96.033			 88.889			 84.444
+SVC(C=1, gamma=0.001)							 91.649			 88.333			 83.333
+SVC(C=2, gamma=0.001)							 94.781			 88.889			 83.889
+SVC(C=5, gamma=0.001)							 96.103			 90.000			 86.111
+SVC(C=10, gamma=0.001)							 97.425			 90.000			 84.444
+SVC(C=50, gamma=0.001)							 98.887			 88.333			 85.000
+SVC(C=100, gamma=0.001)							 99.235			 88.889			 84.444
+SVC(C=1, gamma=0.01)							 98.051			 92.778			 86.667
+SVC(C=2, gamma=0.01)							 98.956			 90.556			 88.333
+SVC(C=5, gamma=0.01)							 99.652			 92.222			 86.111
+SVC(C=10, gamma=0.01)							 99.861			 90.000			 85.000
+SVC(C=50, gamma=0.01)							 100.000			 91.111			 83.889
+SVC(C=100, gamma=0.01)							 100.000			 91.111			 83.889
+
+Best Classification accuracy for classifier {'gamma': 0.01, 'C': 1}: 	Train Acc:98.05;	Dev Acc:92.78;	Test Acc:86.67;
+

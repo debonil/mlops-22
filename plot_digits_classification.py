@@ -17,7 +17,8 @@ import matplotlib.pyplot as plt
 # Import datasets, classifiers and performance metrics
 from sklearn import datasets, svm, metrics
 from sklearn.model_selection import train_test_split
-
+from skimage.transform import rescale
+import numpy as np
 ###############################################################################
 # Digits dataset
 # --------------
@@ -55,9 +56,15 @@ for ax, image, label in zip(axes, digits.images, digits.target):
 # subsequently be used to predict the value of the digit for the samples
 # in the test subset.
 
+
+# Image size and resize
+print(f"Input Image size: \t{digits.images[0].shape}\n")
+image_rescaled = np.asarray([rescale(img, 0.5, anti_aliasing=False) for img in digits.images])
+print(f"Image resized to: \t{image_rescaled[0].shape}\n")
+
 # flatten the images
-n_samples = len(digits.images)
-data = digits.images.reshape((n_samples, -1))
+n_samples = len(image_rescaled)
+data = image_rescaled.reshape((n_samples, -1))
 
 # Split data into 50% train and 50% test subsets
 X_train, X_dev_test, y_train, y_dev_test = train_test_split(
