@@ -32,9 +32,15 @@ def train_dev_test_split(data, label, train_frac, dev_frac):
 
 
 def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, x_test, y_test, metric):
-    best_metric = -1.0
-    best_model = None
-    best_h_params = None
+    best_metric_train = -1.0
+    best_model_train = None
+    best_h_params_train = None
+    best_metric_dev = -1.0
+    best_model_dev = None
+    best_h_params_dev = None
+    best_metric_test = -1.0
+    best_model_test = None
+    best_h_params_test = None
     metric_list_train = []
     metric_list_dev = []
     metric_list_test = []
@@ -51,13 +57,6 @@ def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, x_test, y_
         # Learn the digits on the train subset
         clf.fit(x_train, y_train)
 
-        # print(cur_h_params)
-        # PART: get dev set predictions
-        predicted_dev = clf.predict(x_dev)
-
-        # 2.b compute the accuracy on the validation set
-        cur_metric = metric(y_pred=predicted_dev, y_true=y_dev)
-
 
         # Predict the value of the digit on the test subset
         pred_dev = clf.predict(x_dev)
@@ -72,17 +71,28 @@ def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, x_test, y_
         metric_list_test.append(acc_test)
         print(f"{clf}\t\t\t\t\t\t\t {acc_train*100:.3f}\t\t\t {acc_dev*100:.3f}\t\t\t {acc_test*100:.3f}")
         # 3. identify the combination-of-hyper-parameter for which validation set accuracy is the highest.
-        if cur_metric > best_metric:
-            best_metric = cur_metric
-            best_model = clf
-            best_h_params = cur_h_params
-            #print("Found new best metric with :" + str(cur_h_params))
-            #print("New best val metric:" + str(cur_metric))
+        if acc_dev > best_metric_dev:
+            best_metric_dev = acc_dev
+            best_model_dev = clf
+            best_h_params_dev = cur_h_params
+        if acc_train > best_metric_train:
+            best_metric_train = acc_train
+            best_model_train = clf
+            best_h_params_train = cur_h_params
+        if acc_test > best_metric_test:
+            best_metric_test = acc_test
+            best_model_test = clf
+            best_h_params_test = cur_h_params
     print("\n\t* Min, max, mean, median of the accuracies obtained in previous step : *\t\n")
     print(f"Train Set Accuracy\t\t Min: {min(metric_list_train)*100:.3f}\t\t Max: {max(metric_list_train)*100:.3f}\t\t Mean: {mean(metric_list_train)*100:.3f}\t\t Median: {median(metric_list_train)*100:.3f}")
     print(f"Dev Set Accuracy\t\t Min: {min(metric_list_dev)*100:.3f}\t\t Max: {max(metric_list_dev)*100:.3f}\t\t Mean: {mean(metric_list_dev)*100:.3f}\t\t Median: {median(metric_list_dev)*100:.3f}")
     print(f"Test Set Accuracy\t\t Min: {min(metric_list_test)*100:.3f}\t\t Max: {max(metric_list_test)*100:.3f}\t\t Mean: {mean(metric_list_test)*100:.3f}\t\t Median: {median(metric_list_test)*100:.3f}")
-    return best_model, best_metric, best_h_params
+    
+    print(f"\nBest Classification Train Accuracy for classifier {best_model_train} is {best_metric_train:.2f}\n")
+    print(f"\nBest Classification Dev Accuracy for classifier {best_model_dev} is {best_metric_dev:.2f}\n")
+    print(f"\nBest Classification Test Accuracy for classifier {best_model_test} is {best_metric_test:.2f}\n")
+    
+    return best_model_test, best_metric_test, best_h_params_test
 
 
 # PART: Sanity check of predictions
