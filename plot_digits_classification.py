@@ -13,97 +13,104 @@ hand-written digits, from 0-9.
 
 # Standard scientific Python imports
 import matplotlib.pyplot as plt
-
-# Import datasets, classifiers and performance metrics
-from sklearn import datasets, svm, metrics
+from sklearn import datasets, metrics, svm
 from sklearn.model_selection import train_test_split
-from skimage.transform import rescale
-import numpy as np
-###############################################################################
-# Digits dataset
-# --------------
-#
-# The digits dataset consists of 8x8
-# pixel images of digits. The ``images`` attribute of the dataset stores
-# 8x8 arrays of grayscale values for each image. We will use these arrays to
-# visualize the first 4 images. The ``target`` attribute of the dataset stores
-# the digit each image represents and this is included in the title of the 4
-# plots below.
-#
-# Note: if we were working from image files (e.g., 'png' files), we would load
-# them using :func:`matplotlib.pyplot.imread`.
+
+
+def data_viz(data_to_viz):
+    _, axes = plt.subplots(nrows=1, ncols=4, figsize=(10, 3))
+    for ax, image, label in zip(axes, data_to_viz.images, data_to_viz.target):
+        ax.set_axis_off()
+        ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
+        ax.set_title("Training: %i" % label)
+
+def data_preprocess(data):
+    # flatten the images
+    n_samples = len(data.images)
+    x = data.images.reshape((n_samples, -1))
+    return x,digits.target
+
+def train_dev_test_split(data, label, train_frac, dev_frac):
+
+    dev_test_frac = 1 - train_frac
+    x_train, x_dev_test, y_train, y_dev_test = train_test_split(
+        data, label, test_size=dev_test_frac, shuffle=True
+    )
+    x_test, x_dev, y_test, y_dev = train_test_split(
+        x_dev_test, y_dev_test, test_size=(dev_frac) / dev_test_frac, shuffle=True
+    )
+
+    return x_train, y_train, x_dev, y_dev, x_test, y_test
+
+
+
+def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, metric):
+    best_metric = -1.0
+    best_model = None
+    best_h_params = None
+    # 2. For every combination-of-hyper-parameter values
+    for cur_h_params in h_param_comb:
+
+        # PART: setting up hyperparameter
+        hyper_params = cur_h_params
+        clf.set_params(**hyper_params)
+
+        # PART: Train model
+        # 2.a train the model
+        # Learn the digits on the train subset
+        clf.fit(x_train, y_train)
+
+        # print(cur_h_params)
+        # PART: get dev set predictions
+        predicted_dev = clf.predict(x_dev)
+
+        # 2.b compute the accuracy on the validation set
+        cur_metric = metric(y_pred=predicted_dev, y_true=y_dev)
+
+        # 3. identify the combination-of-hyper-parameter for which validation set accuracy is the highest.
+        if cur_metric > best_metric:
+            best_metric = cur_metric
+            best_model = clf
+            best_h_params = cur_h_params
+            print("Found new best metric with :" + str(cur_h_params))
+            print("New best val metric:" + str(cur_metric))
+    return best_model, best_metric, best_h_params
+
+
+
+## Starts actual execution
 
 digits = datasets.load_digits()
 
-_, axes = plt.subplots(nrows=1, ncols=4, figsize=(10, 3))
-for ax, image, label in zip(axes, digits.images, digits.target):
-    ax.set_axis_off()
-    ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
-    ax.set_title("Training: %i" % label)
+data_viz(digits)
 
-###############################################################################
-# Classification
-# --------------
-#
-# To apply a classifier on this data, we need to flatten the images, turning
-# each 2-D array of grayscale values from shape ``(8, 8)`` into shape
-# ``(64,)``. Subsequently, the entire dataset will be of shape
-# ``(n_samples, n_features)``, where ``n_samples`` is the number of images and
-# ``n_features`` is the total number of pixels in each image.
-#
-# We can then split the data into train and test subsets and fit a support
-# vector classifier on the train samples. The fitted classifier can
-# subsequently be used to predict the value of the digit for the samples
-# in the test subset.
+data, label = data_preprocess(digits)
+# housekeeping
+del digits
+
+
 
 
 # Image size and resize
-print(f"Input Image size: \t{digits.images[0].shape}\n")
-image_rescaled = np.asarray([rescale(img, 0.5, anti_aliasing=False) for img in digits.images])
+""" print(f"Input Image size: \t{digits.images[0].shape}\n")
+image_rescaled = np.asarray([rescale(img, 8, anti_aliasing=False) for img in digits.images])
 print(f"Image resized to: \t{image_rescaled[0].shape}\n")
+ """
 
-# flatten the images
-n_samples = len(image_rescaled)
-data = image_rescaled.reshape((n_samples, -1))
 
-# Split data into 50% train and 50% test subsets
-X_train, X_dev_test, y_train, y_dev_test = train_test_split(
-    data, digits.target, test_size=0.2, shuffle=False
+X_train, y_train, X_dev, y_dev, X_test, y_test = train_dev_test_split(
+    data, label, 0.8, 0.1
 )
-X_dev, X_test, y_dev, y_test = train_test_split(
-    X_dev_test, y_dev_test, test_size=0.5, shuffle=False
-)
-
 
 # Create a classifier: a support vector classifier
-parameters = {'Gamma': [0.00001,0.0001,0.001,0.01], 
-              'C': [ 1, 2, 5,10,50,100]}
-best_acc=[-1,-1,-1]
-best_model = None
+#parameters = {'Gamma': [0.00001,0.0001,0.001,0.01], 'C': [ 1, 2, 5,10,50,100]}
+gamma_list = [0.01, 0.005, 0.001, 0.0005, 0.0001]
+c_list = [0.1, 0.2, 0.5, 0.7, 1, 2, 5, 7, 10]
 
-print(f"Classifier \t\t\t\t\t\t\t|\t Train Acc \t|\t Dev Acc \t|\t Test Acc \n")
-for GAMMA in parameters['Gamma']:
-    for C in parameters['C']:
+h_param_comb = [{"gamma": g, "C": c} for g in gamma_list for c in c_list]
 
-        hyper_params = {'gamma':GAMMA, 'C':C}
-        clf = svm.SVC()
-        clf.set_params(**hyper_params)
+clf = svm.SVC()
+metric=metrics.accuracy_score
+best_model, best_metric, best_h_params = h_param_tuning(h_param_comb, clf, X_train, y_train, X_dev, y_dev, metric)
 
-
-        # Learn the digits on the train subset
-        clf.fit(X_train, y_train)
-
-        # Predict the value of the digit on the test subset
-        pred_dev = clf.predict(X_dev)
-        acc_dev= metrics.accuracy_score(y_dev, pred_dev)
-        pred_test = clf.predict(X_test)
-        acc_test= metrics.accuracy_score(y_test, pred_test)
-        pred_train = clf.predict(X_train)
-        acc_train= metrics.accuracy_score(y_train, pred_train)
-
-        print(f"{clf}\t\t\t\t\t\t\t {acc_train*100:.3f}\t\t\t {acc_dev*100:.3f}\t\t\t {acc_test*100:.3f}")
-        if acc_dev > best_acc[1]:
-            best_acc = [acc_train,acc_dev,acc_test]
-            best_model = hyper_params
-
-print(f"\nBest Classification accuracy for classifier {best_model}: \tTrain Acc:{best_acc[0]*100:.2f};\tDev Acc:{best_acc[1]*100:.2f};\tTest Acc:{best_acc[2]*100:.2f};\n")
+print(f"\nBest Classification {metric} for classifier {best_model} is {best_metric:.2f}\n")
