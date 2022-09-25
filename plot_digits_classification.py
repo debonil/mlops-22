@@ -47,7 +47,7 @@ h_param_comb = [{"gamma": g, "C": c} for g in gamma_list for c in c_list]
 
 clf = svm.SVC()
 metric=metrics.accuracy_score
-best_model, best_metric, best_h_params = h_param_tuning(h_param_comb, clf, X_train, y_train, X_dev, y_dev, metric)
+best_model, best_metric, best_h_params = h_param_tuning(h_param_comb, clf, X_train, y_train, X_dev, y_dev, X_test, y_test, metric)
 
 print(f"\nBest Classification {metric} for classifier {best_model} is {best_metric:.2f}\n")
 
