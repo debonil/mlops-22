@@ -103,3 +103,6 @@ def visualize_pred_data(X_test, predicted):
         image = image.reshape(8, 8)
         ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
         ax.set_title(f"Prediction: {prediction}")
+
+def generate_h_param_comb(gamma_list,c_list):
+    return [{"gamma": g, "C": c} for g in gamma_list for c in c_list]

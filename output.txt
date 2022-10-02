@@ -108,3 +108,30 @@ Classification report for classifier SVC(C=10, gamma=0.0001):
 weighted avg       0.98      0.98      0.98       179
 
 
+============================= test session starts ==============================
+platform linux -- Python 3.8.1, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/debonil/projects/mlops/mlops-22
+collected 3 items
+
+tests/test_example.py ..                                                 [ 66%]
+tests/test_util.py .                                                     [100%]
+
+=============================== warnings summary ===============================
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/matplotlib/__init__.py:169
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/matplotlib/__init__.py:169
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/matplotlib/__init__.py:169
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/matplotlib/__init__.py:169
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/matplotlib/__init__.py:169
+  /home/debonil/miniconda3/envs/py38/lib/python3.8/site-packages/matplotlib/__init__.py:169: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if LooseVersion(module.__version__) < minver:
+
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/setuptools/_distutils/version.py:346
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/setuptools/_distutils/version.py:346
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/setuptools/_distutils/version.py:346
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/setuptools/_distutils/version.py:346
+../../../miniconda3/envs/py38/lib/python3.8/site-packages/setuptools/_distutils/version.py:346
+  /home/debonil/miniconda3/envs/py38/lib/python3.8/site-packages/setuptools/_distutils/version.py:346: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    other = LooseVersion(other)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 3 passed, 10 warnings in 0.70s ========================
