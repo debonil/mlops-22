@@ -63,9 +63,9 @@ print(result_df)
 
 with open('README.md', 'w') as f:
     print('\n# ML-Ops 2022 :: Assignment 4',file=f)
-    print('\n### by Debonil Ghosh [M21AIE225]',file=f)
+    print('\n by **Debonil Ghosh [M21AIE225]**',file=f)
 
-    print('\n**Comparison of two Classifier**\n',file=f)
-    print('>Metric: Accuracy',file=f)
+    print('\n### Comparison of two Classifier ###\n',file=f)
+    print('-Metric: Accuracy',file=f)
     print('____________________________\n',file=f)
-    print(result_df,file=f)
+    print(result_df.to_markdown(),file=f)
