@@ -57,8 +57,15 @@ result[1].append(statistics.mean(result[1]))
 result[1].append(statistics.stdev(result[1]))
 result_df = pd.DataFrame(np.transpose(result),index=[1,2,3,4,5,'Mean','STD'],columns=['SVM','DecisionTree'])
 
-
+print('\nComparison of two Classifier')
+print('____________________________\n')
 print(result_df)
 
-with open('readme.md', 'w') as f:
+with open('README.md', 'w') as f:
+    print('\n# ML-Ops 2022 :: Assignment 4',file=f)
+    print('\n### by Debonil Ghosh [M21AIE225]',file=f)
+
+    print('\n**Comparison of two Classifier**\n',file=f)
+    print('>Metric: Accuracy',file=f)
+    print('____________________________\n',file=f)
     print(result_df,file=f)

@@ -1,10 +1,9 @@
 # Standard scientific Python imports
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import datasets, metrics, svm
+from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from statistics import mean, median
-import seaborn as sns
 
 def data_viz(data_to_viz):
     _, axes = plt.subplots(nrows=1, ncols=4, figsize=(10, 3))
@@ -104,8 +103,6 @@ def generate_h_param_comb(gamma_list,c_list):
     return [{"gamma": g, "C": c} for g in gamma_list for c in c_list]
 
 
-sns.set(rc={'axes.facecolor': 'lightblue', 'figure.facecolor': 'lightblue'})
-
 
 def confusionMatrixAndAccuracyReport(Y_test, Y_pred):
     cm = metrics.confusion_matrix(Y_test, Y_pred)
@@ -113,13 +110,9 @@ def confusionMatrixAndAccuracyReport(Y_test, Y_pred):
 
     classwiseAccuracy = cm.diagonal()/cm.sum(axis=1)
 
-    plt.figure(figsize=(10, 10))
-    plt.title('Accuracy Score: {0:3.3f}'.format(overallAccuracy), size=14)
-    plt.ylabel('Actual label')
-    plt.xlabel('Predicted label')
-    sns.heatmap(data=cm, annot=True, square=True,  cmap='Blues', fmt='g')
-    
-    plt.show()
     print('Overall Accuracy Score: {0:3.3f}'.format(overallAccuracy))
-    print('Classwise Accuracy Score: {0}'.format(classwiseAccuracy))
+    print('Classwise Accuracy Score: ')
+    print([f'{x:f}' for x in classwiseAccuracy])
+    print('Confusion Matrix: ')
+    print(cm)
 
