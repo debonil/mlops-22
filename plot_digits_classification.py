@@ -3,7 +3,9 @@ from unittest import result
 from sklearn import datasets, metrics, svm
 from sklearn import tree
 import statistics
-from util import data_preprocess,data_viz,h_param_tuning,train_dev_test_split,visualize_pred_data
+from util import confusionMatrixAndAccuracyReport, data_preprocess,data_viz,h_param_tuning,train_dev_test_split,visualize_pred_data
+import pandas as pd
+import numpy as np
 ## Starts actual execution
 
 digits = datasets.load_digits()
@@ -45,8 +47,18 @@ for i,clf in enumerate(model_of_choices):
             f"Classification report for classifier {clf}:\n"
             f"{metrics.classification_report(y_test, predicted)}\n"
         )
+        confusionMatrixAndAccuracyReport(y_test, predicted)
 
-print(f'SVM = {result[0]}')
-print(f'Decision Tree = {result[1]}')
-print(f'SVM = \t\tmean:\t{statistics.mean(result[0]):.2f},\t sd:\t{statistics.stdev(result[0]):.2f},')
-print(f'Decision Tree = \tmean:\t{statistics.mean(result[1]):.2f},\t sd:\t{statistics.stdev(result[1]):.2f},')
+
+        
+result[0].append(statistics.mean(result[0]))
+result[0].append(statistics.stdev(result[0]))
+result[1].append(statistics.mean(result[1]))
+result[1].append(statistics.stdev(result[1]))
+result_df = pd.DataFrame(np.transpose(result),index=[1,2,3,4,5,'Mean','STD'],columns=['SVM','DecisionTree'])
+
+
+print(result_df)
+
+with open('readme.md', 'w') as f:
+    print(result_df,file=f)
