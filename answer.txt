@@ -1,0 +1,57 @@
+Answer to Q4:
+SVM has outperformed Decision Tree in all listed metrices like accuracy,f1 score, recall, precision etc. 
+Mean value of metrices are :
+
+Metric : accuracy_score
+           SVM  DecisionTree
+Mean  0.984358      0.825698
+STD   0.005474      0.012934
+
+Metric : f1_score
+           SVM  DecisionTree
+Mean  0.984411      0.827748
+STD   0.005430      0.013093
+
+Metric : recall_score
+           SVM  DecisionTree
+Mean  0.984358      0.825698
+STD   0.005474      0.012934
+
+Metric : precision_score
+           SVM  DecisionTree
+Mean  0.985238      0.839698
+STD   0.005085      0.016272
+
+In all cases , SVM has higher value, and lower standard deviation. That means classification performance of SVM is not only higher in numerical value, it is actually more robust than DT.
+
+Answer to Q5:
+In the context of classifier comparison, in addition to the above given metrices, Confusion Matrix and Class wise Accuracies can be used.
+A Confusion matrix is an N x N matrix used for evaluating the performance of a classification model, where N is the number of target classes. The matrix compares the actual target values with those predicted by the machine learning model.
+A good model is one which has high TP and TN rates, while low FP and FN rates.
+Confusion Matrix for Decision Tree on 5 th run:
+[[16  0  0  0  0  0  0  0  1  1]
+ [ 0 16  3  2  0  0  0  0  1  0]
+ [ 0  0 20  2  2  0  0  0  0  1]
+ [ 0  1  1 13  0  0  0  0  0  1]
+ [ 0  0  0  0 13  0  0  2  0  3]
+ [ 0  1  0  0  1 17  0  0  0  0]
+ [ 0  0  0  1  1  1 17  0  0  0]
+ [ 0  3  0  0  0  0  0  7  1  0]
+ [ 0  0  0  0  0  0  0  0 10  1]
+ [ 0  0  0  1  0  0  0  0  1 17]]
+Confusion Matrix for SVM on 5 th run:
+[[12  0  0  0  0  0  0  0  0  0]
+ [ 0 18  0  0  0  0  0  0  0  0]
+ [ 0  0 22  0  0  0  0  0  0  0]
+ [ 0  0  0 16  0  0  0  0  0  0]
+ [ 0  0  0  0 23  0  0  0  0  0]
+ [ 0  0  0  0  0 24  0  0  0  0]
+ [ 0  0  0  0  0  0 17  0  0  0]
+ [ 0  0  0  0  0  0  0 13  0  1]
+ [ 0  0  0  0  0  0  0  0 17  0]
+ [ 0  0  0  0  0  0  0  0  0 16]]
+
+Accuracy is used when the True Positives and True Negatives are more important. Accuracy is a better metric for Balanced Data.
+Whenever False Positive is much more important Precision is used.
+Whenever False Negative is much more important Recall is used.
+F1-Score is used when the False Negatives and False Positives are important. F1-Score is a better metric for Imbalanced Data.

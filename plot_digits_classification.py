@@ -1,16 +1,23 @@
 
-from unittest import result
-from sklearn import datasets, metrics, svm
-from sklearn import tree
 import statistics
-from util import confusionMatrixAndAccuracyReport, data_preprocess, data_viz, h_param_tuning, train_dev_test_split, visualize_pred_data
-import pandas as pd
+from math import floor
+from unittest import result
+
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import seaborn as sns
+from sklearn import datasets, metrics, svm, tree
+
+from util import (confusionMatrixAndAccuracyReport, data_preprocess,
+                  h_param_tuning, train_dev_test_split)
+
+sns.set(rc={'axes.facecolor': 'lightblue', 'figure.facecolor': 'lightblue'})
 # Starts actual execution
 
 digits = datasets.load_digits()
 
-data_viz(digits)
+# data_viz(digits)
 
 data, label = data_preprocess(digits)
 # housekeeping
@@ -30,6 +37,7 @@ hp_of_choices = [h_param_comb_svm, h_param_comb_dtree]
 metrices_to_measure = [metrics.accuracy_score, metrics.f1_score,
                        metrics.recall_score, metrics.precision_score]
 result = [[[], []] for _ in range(len(metrices_to_measure))]
+cm_list = [[], []]
 for i, clf in enumerate(model_of_choices):
     for k in range(5):
 
@@ -49,7 +57,8 @@ for i, clf in enumerate(model_of_choices):
                     y_test, predicted)
             )
 
-        visualize_pred_data(X_test, predicted)
+        cm_list[i].append(metrics.confusion_matrix(y_test, predicted))
+        #visualize_pred_data(X_test, predicted)
 
         # 4. report the test set accurancy with that best model.
         # PART: Compute evaluation metrics
@@ -59,7 +68,7 @@ for i, clf in enumerate(model_of_choices):
         )
         confusionMatrixAndAccuracyReport(y_test, predicted)
 
-result_df = []
+result_df: list[pd.DataFrame] = []
 for mi, metric in enumerate(metrices_to_measure):
     result[mi][0].append(statistics.mean(result[mi][0]))
     result[mi][0].append(statistics.stdev(result[mi][0]))
@@ -83,3 +92,42 @@ with open('README.md', 'w') as f:
         print('____________________________\n', file=f)
         print(f' - **metric : {metric.__name__}** \n', file=f)
         print(result_df[mi].to_markdown(), file=f)
+
+fig, axes = plt.subplots(2, 2)
+fig.set_size_inches(12, 6)
+fig.suptitle('Comparison of two Classifier on different metric')
+
+for mi, metric in enumerate(metrices_to_measure):
+    data1 = result_df[mi]['SVM'].head(5)
+    data2 = result_df[mi]['DecisionTree'].head(5)
+    width = 0.3
+    axes_i = axes[floor(mi/2)][mi % 2]
+    axes_i.title.set_text(metric.__name__)
+    axes_i.bar(np.arange(len(data1)), data1,
+               width=width, label='SVM')
+    axes_i.bar(np.arange(len(data2)) + width, data2,
+               width=width, label='DecisionTree')
+    #axes_i.set_xlabel('Trials with different train test split')
+    axes_i.set_xticks([r + width for r in range(len(data1))],
+                      np.arange(1, len(data1)+1))
+    axes_i.legend()
+plt.savefig("comparison_on_different_metric.png")
+# plt.show()
+
+# ploting confusion matrix
+
+
+for i, clf in enumerate(model_of_choices):
+    for k in range(5):
+        cm = cm_list[i][k]
+        overallAccuracy = np.trace(cm)/sum(cm.flatten())
+        fig, ax = plt.subplots()
+        #fig.set_size_inches(10, 10)
+        fig.suptitle(f'Confusion matrices of {clf} of run # {k+1}')
+        plt.title('Accuracy Score: {0:3.3f}'.format(overallAccuracy), size=14)
+        plt.ylabel('Actual label')
+        plt.xlabel('Predicted label')
+        sns.heatmap(data=cm, annot=True, square=True,
+                    cmap='Blues', fmt='g', ax=ax)
+        plt.savefig(f"confusion_matrix_{clf}_{k+1}.png")
+        # plt.show()
