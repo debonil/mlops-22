@@ -1,6 +1,10 @@
 from flask import Flask
+from flask import request
+from joblib import load
 
 app = Flask(__name__)
+model_path = "../models/SVC(C=0.7, gamma=0.001)"
+model = load(model_path)
 
 
 @app.route("/")
@@ -8,10 +12,22 @@ def hello_world():
     return "<!-- hello --> <b> Hello, World!</b>"
 
 
-# from flask import request
-# @app.route("/sum", methods=['POST'])
-# def sum():
-#     input_json = request.json
-#     x = input_json['x']
-#     y = input_json['y']
-#     return x + y
+# get x and y somehow
+#     - query parameter
+#     - get call / methods
+#     - post call / methods **
+
+@app.route("/sum", methods=['POST'])
+def sum():
+    x = request.json['x']
+    y = request.json['y']
+    z = x + y
+    return {'sum': z}
+
+
+@app.route("/predict", methods=['POST'])
+def predict_digit():
+    image = request.json['image']
+    print("done loading")
+    predicted = model.predict([image])
+    return {"y_predicted": int(predicted[0])}
