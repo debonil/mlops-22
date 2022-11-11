@@ -135,3 +135,1308 @@ tests/test_util.py .                                                     [100%]
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ======================== 3 passed, 10 warnings in 0.70s ========================
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.647			 6.077			 10.056
+SVC(C=0.2, gamma=0.01)							 21.642			 6.630			 11.173
+SVC(C=0.5, gamma=0.01)							 100.000			 18.785			 22.346
+SVC(C=0.7, gamma=0.01)							 100.000			 42.541			 46.927
+SVC(C=1, gamma=0.01)							 100.000			 78.453			 83.799
+SVC(C=2, gamma=0.01)							 100.000			 80.110			 84.916
+SVC(C=5, gamma=0.01)							 100.000			 80.110			 84.916
+SVC(C=7, gamma=0.01)							 100.000			 80.110			 84.916
+SVC(C=10, gamma=0.01)							 100.000			 80.110			 84.916
+SVC(C=0.1, gamma=0.005)							 30.828			 17.127			 25.140
+SVC(C=0.2, gamma=0.005)							 85.943			 61.878			 65.363
+SVC(C=0.5, gamma=0.005)							 100.000			 93.370			 93.855
+SVC(C=0.7, gamma=0.005)							 100.000			 96.133			 94.972
+SVC(C=1, gamma=0.005)							 100.000			 96.685			 96.089
+SVC(C=2, gamma=0.005)							 100.000			 96.685			 96.089
+SVC(C=5, gamma=0.005)							 100.000			 96.685			 96.089
+SVC(C=7, gamma=0.005)							 100.000			 96.685			 96.089
+SVC(C=10, gamma=0.005)							 100.000			 96.685			 96.089
+SVC(C=0.1, gamma=0.001)							 97.773			 96.133			 96.648
+SVC(C=0.2, gamma=0.001)							 98.678			 97.238			 98.324
+SVC(C=0.5, gamma=0.001)							 99.722			 98.343			 99.441
+SVC(C=0.7, gamma=0.001)							 99.861			 99.448			 100.000
+SVC(C=1, gamma=0.001)							 99.861			 99.448			 100.000
+SVC(C=2, gamma=0.001)							 100.000			 99.448			 100.000
+SVC(C=5, gamma=0.001)							 100.000			 99.448			 100.000
+SVC(C=7, gamma=0.001)							 100.000			 99.448			 100.000
+SVC(C=10, gamma=0.001)							 100.000			 99.448			 100.000
+SVC(C=0.1, gamma=0.0005)							 96.799			 95.028			 96.089
+SVC(C=0.2, gamma=0.0005)							 98.260			 97.238			 96.089
+SVC(C=0.5, gamma=0.0005)							 99.304			 97.790			 98.883
+SVC(C=0.7, gamma=0.0005)							 99.443			 98.343			 98.883
+SVC(C=1, gamma=0.0005)							 99.652			 98.343			 98.883
+SVC(C=2, gamma=0.0005)							 99.861			 98.343			 99.441
+SVC(C=5, gamma=0.0005)							 100.000			 98.343			 100.000
+SVC(C=7, gamma=0.0005)							 100.000			 98.343			 100.000
+SVC(C=10, gamma=0.0005)							 100.000			 98.343			 100.000
+SVC(C=0.1, gamma=0.0001)							 91.301			 86.740			 91.061
+SVC(C=0.2, gamma=0.0001)							 94.642			 92.818			 95.531
+SVC(C=0.5, gamma=0.0001)							 97.077			 95.028			 95.531
+SVC(C=0.7, gamma=0.0001)							 97.634			 96.133			 96.089
+SVC(C=1, gamma=0.0001)							 98.260			 96.685			 96.648
+SVC(C=2, gamma=0.0001)							 98.678			 97.238			 97.207
+SVC(C=5, gamma=0.0001)							 99.443			 98.343			 98.883
+SVC(C=7, gamma=0.0001)							 99.443			 98.343			 98.883
+SVC(C=10, gamma=0.0001)							 99.582			 98.343			 98.883
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.647		 Max: 100.000		 Mean: 93.652		 Median: 99.861
+Dev Set Accuracy		 Min: 6.077		 Max: 99.448		 Mean: 85.623		 Median: 96.685
+Test Set Accuracy		 Min: 10.056		 Max: 100.000		 Mean: 87.225		 Median: 96.089
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.7} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 0.7} is 1.00
+Classification report for classifier SVC(C=0.7, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        17
+           1       0.95      1.00      0.97        18
+           2       1.00      1.00      1.00        13
+           3       1.00      1.00      1.00        18
+           4       1.00      1.00      1.00        19
+           5       0.95      1.00      0.97        18
+           6       1.00      1.00      1.00        21
+           7       1.00      1.00      1.00        23
+           8       1.00      0.88      0.94        17
+           9       1.00      1.00      1.00        15
+
+    accuracy                           0.99       179
+   macro avg       0.99      0.99      0.99       179
+weighted avg       0.99      0.99      0.99       179
+
+
+Overall Accuracy Score: 0.989
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 1.         1.         0.88235294 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.647			 7.735			 8.380
+SVC(C=0.2, gamma=0.01)							 11.343			 7.735			 8.380
+SVC(C=0.5, gamma=0.01)							 100.000			 22.652			 25.698
+SVC(C=0.7, gamma=0.01)							 100.000			 45.304			 42.458
+SVC(C=1, gamma=0.01)							 100.000			 80.663			 77.654
+SVC(C=2, gamma=0.01)							 100.000			 81.768			 78.771
+SVC(C=5, gamma=0.01)							 100.000			 81.768			 78.771
+SVC(C=7, gamma=0.01)							 100.000			 81.768			 78.771
+SVC(C=10, gamma=0.01)							 100.000			 81.768			 78.771
+SVC(C=0.1, gamma=0.005)							 26.583			 18.785			 22.346
+SVC(C=0.2, gamma=0.005)							 82.255			 60.773			 55.866
+SVC(C=0.5, gamma=0.005)							 100.000			 93.923			 93.855
+SVC(C=0.7, gamma=0.005)							 100.000			 95.580			 95.531
+SVC(C=1, gamma=0.005)							 100.000			 97.238			 97.207
+SVC(C=2, gamma=0.005)							 100.000			 97.790			 97.207
+SVC(C=5, gamma=0.005)							 100.000			 97.790			 97.207
+SVC(C=7, gamma=0.005)							 100.000			 97.790			 97.207
+SVC(C=10, gamma=0.005)							 100.000			 97.790			 97.207
+SVC(C=0.1, gamma=0.001)							 97.634			 96.133			 94.972
+SVC(C=0.2, gamma=0.001)							 98.608			 98.895			 96.648
+SVC(C=0.5, gamma=0.001)							 99.722			 99.448			 98.324
+SVC(C=0.7, gamma=0.001)							 99.861			 99.448			 98.324
+SVC(C=1, gamma=0.001)							 99.930			 99.448			 98.883
+SVC(C=2, gamma=0.001)							 100.000			 99.448			 99.441
+SVC(C=5, gamma=0.001)							 100.000			 99.448			 98.883
+SVC(C=7, gamma=0.001)							 100.000			 99.448			 98.883
+SVC(C=10, gamma=0.001)							 100.000			 99.448			 98.883
+SVC(C=0.1, gamma=0.0005)							 96.729			 95.028			 92.737
+SVC(C=0.2, gamma=0.0005)							 97.982			 97.790			 96.089
+SVC(C=0.5, gamma=0.0005)							 99.235			 99.448			 97.207
+SVC(C=0.7, gamma=0.0005)							 99.582			 99.448			 97.765
+SVC(C=1, gamma=0.0005)							 99.791			 99.448			 98.324
+SVC(C=2, gamma=0.0005)							 99.930			 99.448			 98.883
+SVC(C=5, gamma=0.0005)							 100.000			 99.448			 98.324
+SVC(C=7, gamma=0.0005)							 100.000			 99.448			 98.324
+SVC(C=10, gamma=0.0005)							 100.000			 99.448			 98.324
+SVC(C=0.1, gamma=0.0001)							 92.415			 91.713			 84.916
+SVC(C=0.2, gamma=0.0001)							 94.920			 93.370			 88.827
+SVC(C=0.5, gamma=0.0001)							 96.868			 95.580			 93.855
+SVC(C=0.7, gamma=0.0001)							 97.495			 95.580			 94.972
+SVC(C=1, gamma=0.0001)							 98.191			 98.343			 96.089
+SVC(C=2, gamma=0.0001)							 98.817			 98.895			 97.207
+SVC(C=5, gamma=0.0001)							 99.582			 99.448			 97.765
+SVC(C=7, gamma=0.0001)							 99.791			 99.448			 98.324
+SVC(C=10, gamma=0.0001)							 99.791			 99.448			 98.324
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.647		 Max: 100.000		 Mean: 93.282		 Median: 99.930
+Dev Set Accuracy		 Min: 7.735		 Max: 99.448		 Mean: 86.679		 Median: 97.790
+Test Set Accuracy		 Min: 8.380		 Max: 99.441		 Mean: 85.351		 Median: 97.207
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 2} is 0.99
+Classification report for classifier SVC(C=2, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        12
+           1       0.95      1.00      0.97        18
+           2       1.00      1.00      1.00        20
+           3       1.00      1.00      1.00        18
+           4       1.00      1.00      1.00        17
+           5       1.00      1.00      1.00        15
+           6       1.00      1.00      1.00        19
+           7       0.95      1.00      0.98        21
+           8       1.00      0.90      0.95        20
+           9       0.95      0.95      0.95        19
+
+    accuracy                           0.98       179
+   macro avg       0.98      0.98      0.98       179
+weighted avg       0.98      0.98      0.98       179
+
+
+Overall Accuracy Score: 0.983
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 1.         1.         0.9        0.94736842]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.647			 7.735			 8.380
+SVC(C=0.2, gamma=0.01)							 11.621			 7.735			 8.380
+SVC(C=0.5, gamma=0.01)							 100.000			 23.757			 18.994
+SVC(C=0.7, gamma=0.01)							 100.000			 45.304			 42.458
+SVC(C=1, gamma=0.01)							 100.000			 79.006			 77.095
+SVC(C=2, gamma=0.01)							 100.000			 81.215			 77.095
+SVC(C=5, gamma=0.01)							 100.000			 81.215			 77.095
+SVC(C=7, gamma=0.01)							 100.000			 81.215			 77.095
+SVC(C=10, gamma=0.01)							 100.000			 81.215			 77.095
+SVC(C=0.1, gamma=0.005)							 25.052			 21.547			 17.318
+SVC(C=0.2, gamma=0.005)							 83.646			 60.773			 57.542
+SVC(C=0.5, gamma=0.005)							 100.000			 93.923			 93.855
+SVC(C=0.7, gamma=0.005)							 100.000			 95.580			 97.207
+SVC(C=1, gamma=0.005)							 100.000			 96.685			 97.765
+SVC(C=2, gamma=0.005)							 100.000			 96.685			 97.765
+SVC(C=5, gamma=0.005)							 100.000			 96.685			 97.765
+SVC(C=7, gamma=0.005)							 100.000			 96.685			 97.765
+SVC(C=10, gamma=0.005)							 100.000			 96.685			 97.765
+SVC(C=0.1, gamma=0.001)							 97.982			 94.475			 94.972
+SVC(C=0.2, gamma=0.001)							 99.026			 96.685			 96.648
+SVC(C=0.5, gamma=0.001)							 99.791			 98.343			 97.765
+SVC(C=0.7, gamma=0.001)							 99.861			 98.895			 98.324
+SVC(C=1, gamma=0.001)							 99.861			 98.895			 98.324
+SVC(C=2, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=5, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=7, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=10, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=0.1, gamma=0.0005)							 97.216			 93.923			 94.413
+SVC(C=0.2, gamma=0.0005)							 98.330			 95.580			 94.972
+SVC(C=0.5, gamma=0.0005)							 99.165			 98.343			 97.207
+SVC(C=0.7, gamma=0.0005)							 99.722			 98.895			 97.207
+SVC(C=1, gamma=0.0005)							 99.861			 98.895			 97.765
+SVC(C=2, gamma=0.0005)							 99.861			 98.895			 98.883
+SVC(C=5, gamma=0.0005)							 100.000			 98.895			 97.765
+SVC(C=7, gamma=0.0005)							 100.000			 98.895			 97.765
+SVC(C=10, gamma=0.0005)							 100.000			 98.895			 97.765
+SVC(C=0.1, gamma=0.0001)							 91.580			 91.160			 89.944
+SVC(C=0.2, gamma=0.0001)							 95.129			 92.818			 92.737
+SVC(C=0.5, gamma=0.0001)							 97.147			 94.475			 93.296
+SVC(C=0.7, gamma=0.0001)							 97.912			 95.580			 93.855
+SVC(C=1, gamma=0.0001)							 98.399			 96.133			 95.531
+SVC(C=2, gamma=0.0001)							 99.026			 96.685			 96.648
+SVC(C=5, gamma=0.0001)							 99.513			 98.343			 97.207
+SVC(C=7, gamma=0.0001)							 99.582			 98.343			 97.765
+SVC(C=10, gamma=0.0001)							 99.722			 98.343			 97.207
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.647		 Max: 100.000		 Mean: 93.326		 Median: 99.861
+Dev Set Accuracy		 Min: 7.735		 Max: 98.895		 Mean: 85.991		 Median: 96.685
+Test Set Accuracy		 Min: 8.380		 Max: 98.883		 Mean: 85.016		 Median: 97.207
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.7} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.0005, 'C': 2} is 0.99
+Classification report for classifier SVC(C=2, gamma=0.0005):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        15
+           1       0.86      1.00      0.93        19
+           2       1.00      1.00      1.00        19
+           3       0.95      0.95      0.95        21
+           4       1.00      1.00      1.00        19
+           5       1.00      1.00      1.00        15
+           6       1.00      1.00      1.00        10
+           7       0.94      1.00      0.97        17
+           8       1.00      0.85      0.92        26
+           9       1.00      1.00      1.00        18
+
+    accuracy                           0.97       179
+   macro avg       0.98      0.98      0.98       179
+weighted avg       0.97      0.97      0.97       179
+
+
+Overall Accuracy Score: 0.972
+Classwise Accuracy Score: [1.         1.         1.         0.95238095 1.         1.
+ 1.         1.         0.84615385 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.647			 9.392			 6.145
+SVC(C=0.2, gamma=0.01)							 13.640			 9.392			 7.821
+SVC(C=0.5, gamma=0.01)							 100.000			 22.099			 20.112
+SVC(C=0.7, gamma=0.01)							 100.000			 47.514			 37.989
+SVC(C=1, gamma=0.01)							 100.000			 80.663			 73.184
+SVC(C=2, gamma=0.01)							 100.000			 81.215			 75.978
+SVC(C=5, gamma=0.01)							 100.000			 81.215			 75.978
+SVC(C=7, gamma=0.01)							 100.000			 81.215			 75.978
+SVC(C=10, gamma=0.01)							 100.000			 81.215			 75.978
+SVC(C=0.1, gamma=0.005)							 36.256			 23.204			 23.464
+SVC(C=0.2, gamma=0.005)							 88.657			 64.088			 60.894
+SVC(C=0.5, gamma=0.005)							 100.000			 95.580			 94.413
+SVC(C=0.7, gamma=0.005)							 100.000			 95.580			 94.413
+SVC(C=1, gamma=0.005)							 100.000			 96.685			 95.531
+SVC(C=2, gamma=0.005)							 100.000			 96.685			 95.531
+SVC(C=5, gamma=0.005)							 100.000			 96.685			 95.531
+SVC(C=7, gamma=0.005)							 100.000			 96.685			 95.531
+SVC(C=10, gamma=0.005)							 100.000			 96.685			 95.531
+SVC(C=0.1, gamma=0.001)							 97.843			 95.580			 96.089
+SVC(C=0.2, gamma=0.001)							 98.887			 96.685			 97.765
+SVC(C=0.5, gamma=0.001)							 99.722			 97.790			 98.883
+SVC(C=0.7, gamma=0.001)							 99.791			 98.895			 98.883
+SVC(C=1, gamma=0.001)							 99.861			 98.895			 98.883
+SVC(C=2, gamma=0.001)							 100.000			 98.343			 99.441
+SVC(C=5, gamma=0.001)							 100.000			 98.343			 98.324
+SVC(C=7, gamma=0.001)							 100.000			 98.343			 98.324
+SVC(C=10, gamma=0.001)							 100.000			 98.343			 98.324
+SVC(C=0.1, gamma=0.0005)							 96.660			 95.580			 92.737
+SVC(C=0.2, gamma=0.0005)							 98.399			 95.028			 96.648
+SVC(C=0.5, gamma=0.0005)							 99.304			 98.343			 97.765
+SVC(C=0.7, gamma=0.0005)							 99.652			 98.343			 97.765
+SVC(C=1, gamma=0.0005)							 99.722			 98.343			 97.765
+SVC(C=2, gamma=0.0005)							 99.861			 97.790			 98.324
+SVC(C=5, gamma=0.0005)							 100.000			 98.343			 98.883
+SVC(C=7, gamma=0.0005)							 100.000			 98.343			 98.883
+SVC(C=10, gamma=0.0005)							 100.000			 98.343			 98.324
+SVC(C=0.1, gamma=0.0001)							 90.049			 91.160			 89.385
+SVC(C=0.2, gamma=0.0001)							 94.363			 95.028			 92.179
+SVC(C=0.5, gamma=0.0001)							 97.564			 95.028			 93.296
+SVC(C=0.7, gamma=0.0001)							 97.912			 95.028			 93.855
+SVC(C=1, gamma=0.0001)							 98.330			 96.685			 96.089
+SVC(C=2, gamma=0.0001)							 98.956			 97.790			 97.765
+SVC(C=5, gamma=0.0001)							 99.652			 98.343			 97.207
+SVC(C=7, gamma=0.0001)							 99.582			 97.790			 97.207
+SVC(C=10, gamma=0.0001)							 99.861			 97.790			 97.207
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.647		 Max: 100.000		 Mean: 93.670		 Median: 99.861
+Dev Set Accuracy		 Min: 9.392		 Max: 98.895		 Mean: 86.225		 Median: 96.685
+Test Set Accuracy		 Min: 6.145		 Max: 99.441		 Mean: 84.804		 Median: 95.531
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.7} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 2} is 0.99
+Classification report for classifier SVC(C=2, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        16
+           1       0.80      1.00      0.89        16
+           2       0.95      1.00      0.97        19
+           3       1.00      0.95      0.97        19
+           4       1.00      1.00      1.00        14
+           5       1.00      1.00      1.00        24
+           6       1.00      0.91      0.95        11
+           7       1.00      1.00      1.00        23
+           8       1.00      0.86      0.92        21
+           9       1.00      1.00      1.00        16
+
+    accuracy                           0.97       179
+   macro avg       0.97      0.97      0.97       179
+weighted avg       0.98      0.97      0.97       179
+
+
+Overall Accuracy Score: 0.972
+Classwise Accuracy Score: [1.         1.         1.         0.94736842 1.         1.
+ 0.90909091 1.         0.85714286 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.717			 7.735			 7.821
+SVC(C=0.2, gamma=0.01)							 11.413			 7.735			 7.821
+SVC(C=0.5, gamma=0.01)							 100.000			 18.785			 21.788
+SVC(C=0.7, gamma=0.01)							 100.000			 42.541			 45.810
+SVC(C=1, gamma=0.01)							 100.000			 77.901			 77.095
+SVC(C=2, gamma=0.01)							 100.000			 79.558			 77.654
+SVC(C=5, gamma=0.01)							 100.000			 79.558			 77.654
+SVC(C=7, gamma=0.01)							 100.000			 79.558			 77.654
+SVC(C=10, gamma=0.01)							 100.000			 79.558			 77.654
+SVC(C=0.1, gamma=0.005)							 21.503			 14.917			 21.229
+SVC(C=0.2, gamma=0.005)							 80.793			 59.116			 58.659
+SVC(C=0.5, gamma=0.005)							 100.000			 91.713			 90.503
+SVC(C=0.7, gamma=0.005)							 100.000			 94.475			 93.296
+SVC(C=1, gamma=0.005)							 100.000			 96.133			 96.648
+SVC(C=2, gamma=0.005)							 100.000			 96.133			 97.207
+SVC(C=5, gamma=0.005)							 100.000			 96.133			 97.207
+SVC(C=7, gamma=0.005)							 100.000			 96.133			 97.207
+SVC(C=10, gamma=0.005)							 100.000			 96.133			 97.207
+SVC(C=0.1, gamma=0.001)							 97.286			 97.238			 95.531
+SVC(C=0.2, gamma=0.001)							 98.817			 98.895			 96.089
+SVC(C=0.5, gamma=0.001)							 99.652			 99.448			 98.883
+SVC(C=0.7, gamma=0.001)							 99.861			 99.448			 98.883
+SVC(C=1, gamma=0.001)							 99.861			 99.448			 98.883
+SVC(C=2, gamma=0.001)							 100.000			 99.448			 98.883
+SVC(C=5, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=7, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=10, gamma=0.001)							 100.000			 98.895			 98.324
+SVC(C=0.1, gamma=0.0005)							 96.242			 95.580			 94.972
+SVC(C=0.2, gamma=0.0005)							 97.982			 97.790			 96.648
+SVC(C=0.5, gamma=0.0005)							 99.026			 98.895			 97.765
+SVC(C=0.7, gamma=0.0005)							 99.443			 98.895			 98.324
+SVC(C=1, gamma=0.0005)							 99.652			 99.448			 98.883
+SVC(C=2, gamma=0.0005)							 99.861			 99.448			 99.441
+SVC(C=5, gamma=0.0005)							 100.000			 99.448			 98.883
+SVC(C=7, gamma=0.0005)							 100.000			 98.895			 98.883
+SVC(C=10, gamma=0.0005)							 100.000			 98.895			 98.883
+SVC(C=0.1, gamma=0.0001)							 91.093			 87.293			 91.061
+SVC(C=0.2, gamma=0.0001)							 93.876			 92.265			 94.413
+SVC(C=0.5, gamma=0.0001)							 96.660			 95.580			 96.089
+SVC(C=0.7, gamma=0.0001)							 97.077			 96.685			 96.648
+SVC(C=1, gamma=0.0001)							 97.843			 97.790			 96.648
+SVC(C=2, gamma=0.0001)							 98.608			 98.343			 97.765
+SVC(C=5, gamma=0.0001)							 99.304			 98.343			 98.324
+SVC(C=7, gamma=0.0001)							 99.443			 98.343			 98.324
+SVC(C=10, gamma=0.0001)							 99.652			 98.895			 98.324
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.717		 Max: 100.000		 Mean: 93.015		 Median: 99.861
+Dev Set Accuracy		 Min: 7.735		 Max: 99.448		 Mean: 85.672		 Median: 96.685
+Test Set Accuracy		 Min: 7.821		 Max: 99.441		 Mean: 85.611		 Median: 96.648
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.0005, 'C': 2} is 0.99
+Classification report for classifier SVC(C=2, gamma=0.0005):
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97        19
+           1       0.96      1.00      0.98        24
+           2       1.00      1.00      1.00        19
+           3       0.94      1.00      0.97        16
+           4       1.00      1.00      1.00        17
+           5       1.00      1.00      1.00        14
+           6       1.00      0.95      0.98        22
+           7       1.00      1.00      1.00        17
+           8       1.00      0.88      0.93        16
+           9       1.00      1.00      1.00        15
+
+    accuracy                           0.98       179
+   macro avg       0.99      0.98      0.98       179
+weighted avg       0.98      0.98      0.98       179
+
+
+Overall Accuracy Score: 0.983
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 0.95454545 1.         0.875      1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 83.978			 84.916
+DecisionTreeClassifier(min_samples_split=3)							 99.165			 85.083			 85.475
+DecisionTreeClassifier(min_samples_split=5)							 97.912			 85.635			 83.799
+DecisionTreeClassifier(min_samples_split=10)							 94.711			 83.978			 83.240
+DecisionTreeClassifier(min_samples_leaf=3)							 95.129			 82.320			 83.240
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 95.129			 82.873			 82.682
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 95.129			 81.768			 84.358
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 93.459			 83.425			 83.240
+DecisionTreeClassifier(min_samples_leaf=5)							 92.206			 83.978			 80.447
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 92.206			 82.873			 81.006
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 92.206			 83.978			 81.006
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 92.206			 83.425			 81.564
+DecisionTreeClassifier(min_samples_leaf=10)							 87.265			 82.320			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 87.265			 82.320			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 87.265			 82.320			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 87.265			 82.320			 79.330
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 87.265		 Max: 100.000		 Mean: 93.032		 Median: 92.832
+Dev Set Accuracy		 Min: 81.768		 Max: 85.635		 Mean: 83.287		 Median: 83.149
+Test Set Accuracy		 Min: 79.330		 Max: 85.475		 Mean: 82.018		 Median: 82.123
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 5} is 0.86
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 3} is 0.85
+Classification report for classifier DecisionTreeClassifier(min_samples_split=3):
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.98        20
+           1       0.52      0.76      0.62        21
+           2       0.80      0.75      0.77        16
+           3       0.76      0.87      0.81        15
+           4       0.65      0.65      0.65        20
+           5       1.00      0.95      0.97        19
+           6       1.00      0.68      0.81        19
+           7       0.92      0.58      0.71        19
+           8       0.78      0.82      0.80        17
+           9       0.86      0.92      0.89        13
+
+    accuracy                           0.79       179
+   macro avg       0.82      0.80      0.80       179
+weighted avg       0.82      0.79      0.80       179
+
+
+Overall Accuracy Score: 0.793
+Classwise Accuracy Score: [1.         0.76190476 0.75       0.86666667 0.65       0.94736842
+ 0.68421053 0.57894737 0.82352941 0.92307692]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 90.055			 85.475
+DecisionTreeClassifier(min_samples_split=3)							 98.678			 88.950			 83.799
+DecisionTreeClassifier(min_samples_split=5)							 97.286			 90.608			 83.240
+DecisionTreeClassifier(min_samples_split=10)							 94.224			 88.398			 81.564
+DecisionTreeClassifier(min_samples_leaf=3)							 94.711			 86.740			 83.240
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.711			 88.950			 83.240
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.711			 87.293			 83.799
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 92.832			 87.845			 82.123
+DecisionTreeClassifier(min_samples_leaf=5)							 91.232			 86.188			 82.682
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 91.232			 86.740			 81.564
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 91.232			 86.740			 82.682
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 91.232			 86.740			 82.682
+DecisionTreeClassifier(min_samples_leaf=10)							 87.196			 83.978			 79.888
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 87.196			 83.425			 79.888
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 87.196			 82.873			 79.888
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 87.196			 82.873			 79.888
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 87.196		 Max: 100.000		 Mean: 92.554		 Median: 92.032
+Dev Set Accuracy		 Min: 82.873		 Max: 90.608		 Mean: 86.775		 Median: 86.740
+Test Set Accuracy		 Min: 79.888		 Max: 85.475		 Mean: 82.228		 Median: 82.682
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 5} is 0.91
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 0.85
+Classification report for classifier DecisionTreeClassifier():
+              precision    recall  f1-score   support
+
+           0       0.95      0.95      0.95        19
+           1       0.44      0.78      0.56         9
+           2       0.82      0.78      0.80        18
+           3       0.89      0.89      0.89        18
+           4       0.87      0.65      0.74        20
+           5       0.85      0.79      0.81        14
+           6       1.00      0.95      0.97        20
+           7       1.00      0.80      0.89        25
+           8       0.50      0.53      0.51        19
+           9       0.68      0.88      0.77        17
+
+    accuracy                           0.80       179
+   macro avg       0.80      0.80      0.79       179
+weighted avg       0.83      0.80      0.81       179
+
+
+Overall Accuracy Score: 0.799
+Classwise Accuracy Score: [0.94736842 0.77777778 0.77777778 0.88888889 0.65       0.78571429
+ 0.95       0.8        0.52631579 0.88235294]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 83.978			 79.888
+DecisionTreeClassifier(min_samples_split=3)							 98.887			 82.873			 79.888
+DecisionTreeClassifier(min_samples_split=5)							 97.425			 81.215			 81.006
+DecisionTreeClassifier(min_samples_split=10)							 95.129			 83.425			 79.888
+DecisionTreeClassifier(min_samples_leaf=3)							 94.642			 83.425			 80.447
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.642			 84.530			 81.564
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.642			 83.978			 81.006
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 93.250			 83.978			 81.006
+DecisionTreeClassifier(min_samples_leaf=5)							 92.067			 84.530			 80.447
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 92.067			 83.978			 79.888
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 92.067			 82.873			 80.447
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 92.067			 84.530			 79.330
+DecisionTreeClassifier(min_samples_leaf=10)							 88.379			 84.530			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 88.379			 84.530			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 88.379			 84.530			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 88.379			 84.530			 79.330
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 88.379		 Max: 100.000		 Mean: 93.150		 Median: 92.658
+Dev Set Accuracy		 Min: 81.215		 Max: 84.530		 Mean: 83.840		 Median: 83.978
+Test Set Accuracy		 Min: 79.330		 Max: 81.564		 Mean: 80.133		 Median: 79.888
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 3, 'min_samples_split': 3} is 0.85
+Best Classification Test Accuracy for {'min_samples_leaf': 3, 'min_samples_split': 3} is 0.82
+Classification report for classifier DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3):
+              precision    recall  f1-score   support
+
+           0       0.83      0.94      0.88        16
+           1       0.65      0.65      0.65        20
+           2       0.91      0.71      0.80        28
+           3       0.57      0.80      0.67        15
+           4       0.72      0.93      0.81        14
+           5       1.00      0.79      0.88        28
+           6       1.00      0.93      0.97        15
+           7       0.75      0.69      0.72        13
+           8       0.92      0.79      0.85        14
+           9       0.65      0.81      0.72        16
+
+    accuracy                           0.79       179
+   macro avg       0.80      0.80      0.79       179
+weighted avg       0.82      0.79      0.80       179
+
+
+Overall Accuracy Score: 0.793
+Classwise Accuracy Score: [0.9375     0.65       0.71428571 0.8        0.92857143 0.78571429
+ 0.93333333 0.69230769 0.78571429 0.8125    ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 82.320			 88.827
+DecisionTreeClassifier(min_samples_split=3)							 99.026			 81.215			 89.385
+DecisionTreeClassifier(min_samples_split=5)							 97.704			 81.768			 88.268
+DecisionTreeClassifier(min_samples_split=10)							 94.850			 81.215			 88.268
+DecisionTreeClassifier(min_samples_leaf=3)							 94.502			 80.663			 87.709
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.502			 80.110			 87.151
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.502			 78.453			 89.944
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 93.111			 80.663			 88.268
+DecisionTreeClassifier(min_samples_leaf=5)							 92.345			 80.110			 86.034
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 92.345			 80.663			 87.151
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 92.345			 80.663			 86.592
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 92.345			 80.110			 86.592
+DecisionTreeClassifier(min_samples_leaf=10)							 87.683			 79.558			 81.006
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 87.683			 79.558			 81.006
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 87.683			 79.558			 82.123
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 87.683			 79.558			 81.006
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 87.683		 Max: 100.000		 Mean: 93.019		 Median: 92.728
+Dev Set Accuracy		 Min: 78.453		 Max: 82.320		 Mean: 80.387		 Median: 80.387
+Test Set Accuracy		 Min: 81.006		 Max: 89.944		 Mean: 86.208		 Median: 87.151
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 0.82
+Best Classification Test Accuracy for {'min_samples_leaf': 3, 'min_samples_split': 5} is 0.90
+Classification report for classifier DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5):
+              precision    recall  f1-score   support
+
+           0       1.00      0.93      0.97        15
+           1       0.70      0.82      0.76        17
+           2       0.89      0.80      0.84        20
+           3       0.68      0.87      0.76        15
+           4       0.93      0.64      0.76        22
+           5       0.74      0.94      0.83        18
+           6       1.00      0.75      0.86        20
+           7       0.59      0.71      0.65        14
+           8       0.82      0.82      0.82        17
+           9       0.86      0.86      0.86        21
+
+    accuracy                           0.81       179
+   macro avg       0.82      0.81      0.81       179
+weighted avg       0.83      0.81      0.81       179
+
+
+Overall Accuracy Score: 0.810
+Classwise Accuracy Score: [0.93333333 0.82352941 0.8        0.86666667 0.63636364 0.94444444
+ 0.75       0.71428571 0.82352941 0.85714286]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 83.978			 79.888
+DecisionTreeClassifier(min_samples_split=3)							 98.887			 86.188			 82.682
+DecisionTreeClassifier(min_samples_split=5)							 96.938			 83.978			 79.888
+DecisionTreeClassifier(min_samples_split=10)							 94.015			 85.635			 81.564
+DecisionTreeClassifier(min_samples_leaf=3)							 94.920			 87.293			 82.123
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.920			 83.978			 79.330
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.920			 86.740			 81.006
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 92.902			 85.635			 81.006
+DecisionTreeClassifier(min_samples_leaf=5)							 91.371			 85.635			 79.888
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 91.371			 86.740			 81.006
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 91.371			 84.530			 81.006
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 91.371			 85.083			 81.006
+DecisionTreeClassifier(min_samples_leaf=10)							 87.056			 81.768			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 87.056			 81.768			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 87.056			 81.215			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 87.056			 81.215			 79.330
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 87.056		 Max: 100.000		 Mean: 92.576		 Median: 92.136
+Dev Set Accuracy		 Min: 81.215		 Max: 87.293		 Mean: 84.461		 Median: 84.807
+Test Set Accuracy		 Min: 79.330		 Max: 82.682		 Mean: 80.622		 Median: 80.726
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 3, 'min_samples_split': 2} is 0.87
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 3} is 0.83
+Classification report for classifier DecisionTreeClassifier(min_samples_split=3):
+              precision    recall  f1-score   support
+
+           0       0.93      1.00      0.96        13
+           1       0.60      0.60      0.60        15
+           2       0.63      0.85      0.72        20
+           3       0.74      0.74      0.74        19
+           4       0.86      0.72      0.78        25
+           5       0.90      0.86      0.88        21
+           6       1.00      0.88      0.93        24
+           7       0.92      0.80      0.86        15
+           8       0.65      0.73      0.69        15
+           9       0.75      0.75      0.75        12
+
+    accuracy                           0.79       179
+   macro avg       0.80      0.79      0.79       179
+weighted avg       0.81      0.79      0.80       179
+
+
+Overall Accuracy Score: 0.793
+Classwise Accuracy Score: [1.         0.6        0.85       0.73684211 0.72       0.85714286
+ 0.875      0.8        0.73333333 0.75      ]
+           SVM  DecisionTree
+1     1.000000      0.854749
+2     0.994413      0.854749
+3     0.988827      0.815642
+4     0.994413      0.899441
+5     0.994413      0.826816
+Mean  0.994413      0.850279
+STD   0.003533      0.029007
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.578			 9.392			 7.821
+SVC(C=0.2, gamma=0.01)							 12.735			 9.945			 7.821
+SVC(C=0.5, gamma=0.01)							 100.000			 24.309			 17.877
+SVC(C=0.7, gamma=0.01)							 100.000			 54.144			 49.721
+SVC(C=1, gamma=0.01)							 100.000			 77.901			 81.564
+SVC(C=2, gamma=0.01)							 100.000			 78.453			 83.240
+SVC(C=5, gamma=0.01)							 100.000			 78.453			 83.240
+SVC(C=7, gamma=0.01)							 100.000			 78.453			 83.240
+SVC(C=10, gamma=0.01)							 100.000			 78.453			 83.240
+SVC(C=0.1, gamma=0.005)							 29.923			 20.994			 16.760
+SVC(C=0.2, gamma=0.005)							 88.587			 71.823			 68.715
+SVC(C=0.5, gamma=0.005)							 100.000			 95.028			 96.089
+SVC(C=0.7, gamma=0.005)							 100.000			 96.685			 97.207
+SVC(C=1, gamma=0.005)							 100.000			 97.238			 97.207
+SVC(C=2, gamma=0.005)							 100.000			 97.238			 97.207
+SVC(C=5, gamma=0.005)							 100.000			 97.238			 97.207
+SVC(C=7, gamma=0.005)							 100.000			 97.238			 97.207
+SVC(C=10, gamma=0.005)							 100.000			 97.238			 97.207
+SVC(C=0.1, gamma=0.001)							 97.495			 97.790			 95.531
+SVC(C=0.2, gamma=0.001)							 98.678			 98.895			 96.648
+SVC(C=0.5, gamma=0.001)							 99.582			 100.000			 98.324
+SVC(C=0.7, gamma=0.001)							 99.861			 100.000			 98.324
+SVC(C=1, gamma=0.001)							 99.861			 100.000			 98.324
+SVC(C=2, gamma=0.001)							 100.000			 100.000			 100.000
+SVC(C=5, gamma=0.001)							 100.000			 100.000			 100.000
+SVC(C=7, gamma=0.001)							 100.000			 100.000			 100.000
+SVC(C=10, gamma=0.001)							 100.000			 100.000			 100.000
+SVC(C=0.1, gamma=0.0005)							 96.381			 96.685			 95.531
+SVC(C=0.2, gamma=0.0005)							 98.260			 98.343			 96.648
+SVC(C=0.5, gamma=0.0005)							 99.095			 99.448			 98.324
+SVC(C=0.7, gamma=0.0005)							 99.304			 99.448			 98.324
+SVC(C=1, gamma=0.0005)							 99.513			 100.000			 98.324
+SVC(C=2, gamma=0.0005)							 99.861			 100.000			 99.441
+SVC(C=5, gamma=0.0005)							 100.000			 100.000			 100.000
+SVC(C=7, gamma=0.0005)							 100.000			 100.000			 100.000
+SVC(C=10, gamma=0.0005)							 100.000			 100.000			 100.000
+SVC(C=0.1, gamma=0.0001)							 89.770			 92.818			 88.268
+SVC(C=0.2, gamma=0.0001)							 93.737			 96.133			 93.855
+SVC(C=0.5, gamma=0.0001)							 96.660			 97.238			 96.089
+SVC(C=0.7, gamma=0.0001)							 97.425			 97.790			 96.089
+SVC(C=1, gamma=0.0001)							 98.051			 99.448			 96.648
+SVC(C=2, gamma=0.0001)							 98.678			 99.448			 98.324
+SVC(C=5, gamma=0.0001)							 99.165			 98.895			 98.324
+SVC(C=7, gamma=0.0001)							 99.443			 99.448			 97.765
+SVC(C=10, gamma=0.0001)							 99.652			 99.448			 97.207
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.578		 Max: 100.000		 Mean: 93.384		 Median: 99.861
+Dev Set Accuracy		 Min: 9.392		 Max: 100.000		 Mean: 87.366		 Median: 97.790
+Test Set Accuracy		 Min: 7.821		 Max: 100.000		 Mean: 86.642		 Median: 97.207
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 1.00
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 2} is 1.00
+Classification report for classifier SVC(C=2, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        16
+           1       1.00      0.95      0.97        19
+           2       1.00      1.00      1.00        15
+           3       1.00      1.00      1.00        14
+           4       0.95      0.90      0.93        21
+           5       0.91      1.00      0.95        20
+           6       1.00      0.95      0.98        22
+           7       1.00      1.00      1.00        11
+           8       0.96      0.96      0.96        27
+           9       0.93      1.00      0.97        14
+
+    accuracy                           0.97       179
+   macro avg       0.98      0.98      0.98       179
+weighted avg       0.97      0.97      0.97       179
+
+
+Overall Accuracy Score: 0.972
+Classwise Accuracy Score: [1.         0.94736842 1.         1.         0.9047619  1.
+ 0.95454545 1.         0.96296296 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.438			 11.050			 7.263
+SVC(C=0.2, gamma=0.01)							 11.273			 11.050			 7.263
+SVC(C=0.5, gamma=0.01)							 99.930			 26.519			 25.698
+SVC(C=0.7, gamma=0.01)							 100.000			 43.094			 49.162
+SVC(C=1, gamma=0.01)							 100.000			 74.586			 81.564
+SVC(C=2, gamma=0.01)							 100.000			 75.691			 82.682
+SVC(C=5, gamma=0.01)							 100.000			 75.691			 82.682
+SVC(C=7, gamma=0.01)							 100.000			 75.691			 82.682
+SVC(C=10, gamma=0.01)							 100.000			 75.691			 82.682
+SVC(C=0.1, gamma=0.005)							 33.890			 27.072			 24.581
+SVC(C=0.2, gamma=0.005)							 93.946			 65.746			 70.950
+SVC(C=0.5, gamma=0.005)							 100.000			 88.950			 92.737
+SVC(C=0.7, gamma=0.005)							 100.000			 92.818			 96.648
+SVC(C=1, gamma=0.005)							 100.000			 94.475			 97.765
+SVC(C=2, gamma=0.005)							 100.000			 95.028			 97.765
+SVC(C=5, gamma=0.005)							 100.000			 95.028			 97.765
+SVC(C=7, gamma=0.005)							 100.000			 95.028			 97.765
+SVC(C=10, gamma=0.005)							 100.000			 95.028			 97.765
+SVC(C=0.1, gamma=0.001)							 97.356			 95.580			 97.765
+SVC(C=0.2, gamma=0.001)							 98.887			 97.238			 98.883
+SVC(C=0.5, gamma=0.001)							 99.861			 98.895			 99.441
+SVC(C=0.7, gamma=0.001)							 99.930			 98.895			 100.000
+SVC(C=1, gamma=0.001)							 99.930			 98.895			 100.000
+SVC(C=2, gamma=0.001)							 100.000			 98.895			 100.000
+SVC(C=5, gamma=0.001)							 100.000			 98.895			 100.000
+SVC(C=7, gamma=0.001)							 100.000			 98.895			 100.000
+SVC(C=10, gamma=0.001)							 100.000			 98.895			 100.000
+SVC(C=0.1, gamma=0.0005)							 96.381			 94.475			 97.207
+SVC(C=0.2, gamma=0.0005)							 98.191			 97.238			 98.324
+SVC(C=0.5, gamma=0.0005)							 99.095			 97.790			 99.441
+SVC(C=0.7, gamma=0.0005)							 99.582			 98.343			 99.441
+SVC(C=1, gamma=0.0005)							 99.791			 98.895			 99.441
+SVC(C=2, gamma=0.0005)							 99.930			 98.895			 100.000
+SVC(C=5, gamma=0.0005)							 100.000			 98.895			 100.000
+SVC(C=7, gamma=0.0005)							 100.000			 98.895			 100.000
+SVC(C=10, gamma=0.0005)							 100.000			 98.895			 100.000
+SVC(C=0.1, gamma=0.0001)							 91.371			 86.188			 92.737
+SVC(C=0.2, gamma=0.0001)							 94.294			 93.370			 95.531
+SVC(C=0.5, gamma=0.0001)							 96.660			 95.028			 97.207
+SVC(C=0.7, gamma=0.0001)							 97.147			 95.580			 98.324
+SVC(C=1, gamma=0.0001)							 97.495			 95.580			 98.324
+SVC(C=2, gamma=0.0001)							 98.887			 96.133			 98.324
+SVC(C=5, gamma=0.0001)							 99.374			 97.790			 98.883
+SVC(C=7, gamma=0.0001)							 99.443			 97.790			 99.441
+SVC(C=10, gamma=0.0001)							 99.861			 98.343			 99.441
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.438		 Max: 100.000		 Mean: 93.621		 Median: 99.930
+Dev Set Accuracy		 Min: 11.050		 Max: 98.895		 Mean: 85.365		 Median: 95.580
+Test Set Accuracy		 Min: 7.263		 Max: 100.000		 Mean: 87.635		 Median: 97.765
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.7} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 0.7} is 1.00
+Classification report for classifier SVC(C=0.7, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        22
+           1       0.95      1.00      0.97        18
+           2       1.00      1.00      1.00        12
+           3       1.00      1.00      1.00        13
+           4       1.00      1.00      1.00        19
+           5       1.00      1.00      1.00        23
+           6       1.00      1.00      1.00        19
+           7       1.00      1.00      1.00        21
+           8       1.00      0.92      0.96        13
+           9       1.00      1.00      1.00        19
+
+    accuracy                           0.99       179
+   macro avg       0.99      0.99      0.99       179
+weighted avg       0.99      0.99      0.99       179
+
+
+Overall Accuracy Score: 0.994
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 1.         1.         0.92307692 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.578			 6.630			 10.615
+SVC(C=0.2, gamma=0.01)							 11.761			 6.630			 10.615
+SVC(C=0.5, gamma=0.01)							 100.000			 20.442			 24.581
+SVC(C=0.7, gamma=0.01)							 100.000			 55.801			 57.542
+SVC(C=1, gamma=0.01)							 100.000			 88.398			 88.268
+SVC(C=2, gamma=0.01)							 100.000			 88.398			 88.827
+SVC(C=5, gamma=0.01)							 100.000			 88.398			 88.827
+SVC(C=7, gamma=0.01)							 100.000			 88.398			 88.827
+SVC(C=10, gamma=0.01)							 100.000			 88.398			 88.827
+SVC(C=0.1, gamma=0.005)							 28.114			 20.994			 22.905
+SVC(C=0.2, gamma=0.005)							 89.283			 75.691			 74.302
+SVC(C=0.5, gamma=0.005)							 100.000			 95.580			 95.531
+SVC(C=0.7, gamma=0.005)							 100.000			 97.238			 98.324
+SVC(C=1, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=2, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=5, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=7, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=10, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=0.1, gamma=0.001)							 97.704			 96.685			 97.765
+SVC(C=0.2, gamma=0.001)							 98.817			 98.343			 98.324
+SVC(C=0.5, gamma=0.001)							 99.861			 98.343			 99.441
+SVC(C=0.7, gamma=0.001)							 99.861			 98.343			 99.441
+SVC(C=1, gamma=0.001)							 99.930			 98.343			 99.441
+SVC(C=2, gamma=0.001)							 100.000			 98.343			 99.441
+SVC(C=5, gamma=0.001)							 100.000			 98.343			 99.441
+SVC(C=7, gamma=0.001)							 100.000			 98.343			 99.441
+SVC(C=10, gamma=0.001)							 100.000			 98.343			 99.441
+SVC(C=0.1, gamma=0.0005)							 96.660			 96.685			 97.207
+SVC(C=0.2, gamma=0.0005)							 98.330			 97.238			 98.324
+SVC(C=0.5, gamma=0.0005)							 99.165			 98.343			 99.441
+SVC(C=0.7, gamma=0.0005)							 99.443			 98.895			 99.441
+SVC(C=1, gamma=0.0005)							 99.791			 98.895			 99.441
+SVC(C=2, gamma=0.0005)							 99.930			 98.895			 99.441
+SVC(C=5, gamma=0.0005)							 100.000			 98.895			 100.000
+SVC(C=7, gamma=0.0005)							 100.000			 98.895			 100.000
+SVC(C=10, gamma=0.0005)							 100.000			 98.895			 100.000
+SVC(C=0.1, gamma=0.0001)							 90.397			 92.265			 92.179
+SVC(C=0.2, gamma=0.0001)							 94.154			 95.580			 95.531
+SVC(C=0.5, gamma=0.0001)							 96.729			 96.685			 98.324
+SVC(C=0.7, gamma=0.0001)							 97.564			 97.238			 98.324
+SVC(C=1, gamma=0.0001)							 98.121			 96.685			 98.324
+SVC(C=2, gamma=0.0001)							 98.817			 97.790			 98.883
+SVC(C=5, gamma=0.0001)							 99.443			 97.790			 98.883
+SVC(C=7, gamma=0.0001)							 99.652			 98.343			 98.883
+SVC(C=10, gamma=0.0001)							 99.791			 97.790			 98.883
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.578		 Max: 100.000		 Mean: 93.420		 Median: 99.930
+Dev Set Accuracy		 Min: 6.630		 Max: 98.895		 Mean: 87.698		 Median: 97.238
+Test Set Accuracy		 Min: 10.615		 Max: 100.000		 Mean: 88.802		 Median: 98.883
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.0005, 'C': 0.7} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.0005, 'C': 5} is 1.00
+Classification report for classifier SVC(C=5, gamma=0.0005):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        18
+           1       0.95      1.00      0.98        21
+           2       1.00      1.00      1.00        14
+           3       1.00      1.00      1.00        19
+           4       1.00      1.00      1.00        15
+           5       1.00      1.00      1.00        21
+           6       1.00      1.00      1.00        18
+           7       1.00      1.00      1.00        18
+           8       1.00      0.90      0.95        20
+           9       0.94      1.00      0.97        15
+
+    accuracy                           0.99       179
+   macro avg       0.99      0.99      0.99       179
+weighted avg       0.99      0.99      0.99       179
+
+
+Overall Accuracy Score: 0.989
+Classwise Accuracy Score: [1.  1.  1.  1.  1.  1.  1.  1.  0.9 1. ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.856			 6.077			 7.821
+SVC(C=0.2, gamma=0.01)							 12.665			 6.077			 8.380
+SVC(C=0.5, gamma=0.01)							 100.000			 16.022			 21.788
+SVC(C=0.7, gamma=0.01)							 100.000			 51.381			 51.955
+SVC(C=1, gamma=0.01)							 100.000			 83.425			 84.358
+SVC(C=2, gamma=0.01)							 100.000			 85.635			 84.916
+SVC(C=5, gamma=0.01)							 100.000			 85.635			 84.916
+SVC(C=7, gamma=0.01)							 100.000			 85.635			 84.916
+SVC(C=10, gamma=0.01)							 100.000			 85.635			 84.916
+SVC(C=0.1, gamma=0.005)							 23.939			 14.917			 17.318
+SVC(C=0.2, gamma=0.005)							 90.257			 70.166			 67.598
+SVC(C=0.5, gamma=0.005)							 100.000			 92.818			 94.413
+SVC(C=0.7, gamma=0.005)							 100.000			 95.580			 97.765
+SVC(C=1, gamma=0.005)							 100.000			 96.133			 99.441
+SVC(C=2, gamma=0.005)							 100.000			 96.133			 99.441
+SVC(C=5, gamma=0.005)							 100.000			 96.133			 99.441
+SVC(C=7, gamma=0.005)							 100.000			 96.133			 99.441
+SVC(C=10, gamma=0.005)							 100.000			 96.133			 99.441
+SVC(C=0.1, gamma=0.001)							 97.773			 96.685			 98.324
+SVC(C=0.2, gamma=0.001)							 98.887			 97.790			 98.883
+SVC(C=0.5, gamma=0.001)							 99.861			 98.895			 99.441
+SVC(C=0.7, gamma=0.001)							 99.930			 98.895			 99.441
+SVC(C=1, gamma=0.001)							 99.930			 98.895			 99.441
+SVC(C=2, gamma=0.001)							 100.000			 98.895			 99.441
+SVC(C=5, gamma=0.001)							 100.000			 98.895			 99.441
+SVC(C=7, gamma=0.001)							 100.000			 98.895			 99.441
+SVC(C=10, gamma=0.001)							 100.000			 98.895			 99.441
+SVC(C=0.1, gamma=0.0005)							 96.312			 95.580			 98.324
+SVC(C=0.2, gamma=0.0005)							 97.982			 98.343			 98.324
+SVC(C=0.5, gamma=0.0005)							 99.374			 98.343			 99.441
+SVC(C=0.7, gamma=0.0005)							 99.722			 98.343			 99.441
+SVC(C=1, gamma=0.0005)							 99.791			 98.895			 99.441
+SVC(C=2, gamma=0.0005)							 99.930			 98.895			 99.441
+SVC(C=5, gamma=0.0005)							 100.000			 98.895			 99.441
+SVC(C=7, gamma=0.0005)							 100.000			 98.895			 99.441
+SVC(C=10, gamma=0.0005)							 100.000			 98.895			 99.441
+SVC(C=0.1, gamma=0.0001)							 90.953			 93.370			 90.503
+SVC(C=0.2, gamma=0.0001)							 94.502			 94.475			 95.531
+SVC(C=0.5, gamma=0.0001)							 96.868			 96.133			 97.207
+SVC(C=0.7, gamma=0.0001)							 97.216			 97.238			 98.324
+SVC(C=1, gamma=0.0001)							 97.912			 97.790			 98.883
+SVC(C=2, gamma=0.0001)							 98.608			 98.343			 99.441
+SVC(C=5, gamma=0.0001)							 99.582			 97.790			 99.441
+SVC(C=7, gamma=0.0001)							 99.652			 97.790			 99.441
+SVC(C=10, gamma=0.0001)							 99.861			 97.238			 99.441
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.856		 Max: 100.000		 Mean: 93.386		 Median: 99.930
+Dev Set Accuracy		 Min: 6.077		 Max: 98.895		 Mean: 86.703		 Median: 96.685
+Test Set Accuracy		 Min: 7.821		 Max: 99.441		 Mean: 87.834		 Median: 99.441
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 0.99
+Best Classification Test Accuracy for {'gamma': 0.005, 'C': 1} is 0.99
+Classification report for classifier SVC(C=1, gamma=0.005):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        18
+           1       0.93      1.00      0.97        14
+           2       1.00      1.00      1.00        19
+           3       1.00      1.00      1.00        16
+           4       1.00      1.00      1.00        14
+           5       1.00      1.00      1.00        17
+           6       1.00      1.00      1.00        22
+           7       1.00      1.00      1.00        21
+           8       1.00      0.94      0.97        17
+           9       1.00      1.00      1.00        21
+
+    accuracy                           0.99       179
+   macro avg       0.99      0.99      0.99       179
+weighted avg       0.99      0.99      0.99       179
+
+
+Overall Accuracy Score: 0.994
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 1.         1.         0.94117647 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.578			 7.735			 9.497
+SVC(C=0.2, gamma=0.01)							 12.109			 8.287			 9.497
+SVC(C=0.5, gamma=0.01)							 100.000			 19.337			 27.374
+SVC(C=0.7, gamma=0.01)							 100.000			 41.989			 51.397
+SVC(C=1, gamma=0.01)							 100.000			 80.663			 82.123
+SVC(C=2, gamma=0.01)							 100.000			 81.768			 82.682
+SVC(C=5, gamma=0.01)							 100.000			 81.768			 82.682
+SVC(C=7, gamma=0.01)							 100.000			 81.768			 82.682
+SVC(C=10, gamma=0.01)							 100.000			 81.768			 82.682
+SVC(C=0.1, gamma=0.005)							 32.011			 20.442			 27.374
+SVC(C=0.2, gamma=0.005)							 93.041			 71.271			 72.067
+SVC(C=0.5, gamma=0.005)							 100.000			 89.503			 93.855
+SVC(C=0.7, gamma=0.005)							 100.000			 95.580			 98.324
+SVC(C=1, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=2, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=5, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=7, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=10, gamma=0.005)							 100.000			 97.238			 98.883
+SVC(C=0.1, gamma=0.001)							 97.564			 95.580			 97.765
+SVC(C=0.2, gamma=0.001)							 98.887			 97.790			 97.765
+SVC(C=0.5, gamma=0.001)							 99.861			 98.343			 98.883
+SVC(C=0.7, gamma=0.001)							 99.930			 98.343			 98.883
+SVC(C=1, gamma=0.001)							 100.000			 98.343			 98.883
+SVC(C=2, gamma=0.001)							 100.000			 98.343			 98.883
+SVC(C=5, gamma=0.001)							 100.000			 98.343			 98.883
+SVC(C=7, gamma=0.001)							 100.000			 98.343			 98.883
+SVC(C=10, gamma=0.001)							 100.000			 98.343			 98.883
+SVC(C=0.1, gamma=0.0005)							 96.660			 95.580			 97.207
+SVC(C=0.2, gamma=0.0005)							 98.260			 97.238			 97.765
+SVC(C=0.5, gamma=0.0005)							 99.513			 97.790			 98.883
+SVC(C=0.7, gamma=0.0005)							 99.652			 98.343			 98.883
+SVC(C=1, gamma=0.0005)							 99.791			 98.343			 98.883
+SVC(C=2, gamma=0.0005)							 100.000			 98.343			 98.883
+SVC(C=5, gamma=0.0005)							 100.000			 98.343			 98.883
+SVC(C=7, gamma=0.0005)							 100.000			 98.343			 98.883
+SVC(C=10, gamma=0.0005)							 100.000			 98.343			 98.883
+SVC(C=0.1, gamma=0.0001)							 90.953			 91.713			 90.503
+SVC(C=0.2, gamma=0.0001)							 94.711			 93.370			 95.531
+SVC(C=0.5, gamma=0.0001)							 96.799			 96.133			 96.648
+SVC(C=0.7, gamma=0.0001)							 97.634			 96.133			 97.207
+SVC(C=1, gamma=0.0001)							 97.843			 97.790			 97.765
+SVC(C=2, gamma=0.0001)							 98.956			 97.790			 97.765
+SVC(C=5, gamma=0.0001)							 99.513			 97.790			 98.324
+SVC(C=7, gamma=0.0001)							 99.722			 98.343			 98.324
+SVC(C=10, gamma=0.0001)							 99.861			 98.343			 98.883
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.578		 Max: 100.000		 Mean: 93.641		 Median: 100.000
+Dev Set Accuracy		 Min: 7.735		 Max: 98.343		 Mean: 86.176		 Median: 97.238
+Test Set Accuracy		 Min: 9.497		 Max: 98.883		 Mean: 87.610		 Median: 98.324
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 0.98
+Best Classification Test Accuracy for {'gamma': 0.005, 'C': 1} is 0.99
+Classification report for classifier SVC(C=1, gamma=0.005):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        21
+           1       0.92      1.00      0.96        24
+           2       1.00      1.00      1.00        20
+           3       1.00      1.00      1.00        17
+           4       1.00      1.00      1.00        19
+           5       1.00      1.00      1.00        15
+           6       1.00      1.00      1.00        17
+           7       1.00      1.00      1.00        13
+           8       1.00      0.86      0.92        14
+           9       1.00      1.00      1.00        19
+
+    accuracy                           0.99       179
+   macro avg       0.99      0.99      0.99       179
+weighted avg       0.99      0.99      0.99       179
+
+
+Overall Accuracy Score: 0.989
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 1.         1.         0.85714286 1.        ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 85.635			 88.268
+DecisionTreeClassifier(min_samples_split=3)							 98.747			 82.320			 88.268
+DecisionTreeClassifier(min_samples_split=5)							 97.147			 85.083			 84.916
+DecisionTreeClassifier(min_samples_split=10)							 95.129			 83.978			 83.240
+DecisionTreeClassifier(min_samples_leaf=3)							 94.850			 83.978			 83.799
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.850			 83.978			 85.475
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.850			 83.425			 84.358
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 93.876			 84.530			 82.682
+DecisionTreeClassifier(min_samples_leaf=5)							 92.554			 82.320			 84.358
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 92.554			 82.320			 84.916
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 92.554			 82.320			 85.475
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 92.554			 83.425			 85.475
+DecisionTreeClassifier(min_samples_leaf=10)							 88.935			 81.768			 82.123
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 88.935			 81.768			 81.564
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 88.935			 81.215			 81.006
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 88.935			 81.215			 81.006
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 88.935		 Max: 100.000		 Mean: 93.463		 Median: 93.215
+Dev Set Accuracy		 Min: 81.215		 Max: 85.635		 Mean: 83.080		 Median: 82.873
+Test Set Accuracy		 Min: 81.006		 Max: 88.268		 Mean: 84.183		 Median: 84.358
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 0.86
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 0.88
+Classification report for classifier DecisionTreeClassifier():
+              precision    recall  f1-score   support
+
+           0       1.00      0.91      0.95        23
+           1       0.61      0.79      0.69        14
+           2       0.69      0.64      0.67        14
+           3       0.75      0.82      0.78        22
+           4       0.76      0.93      0.84        14
+           5       0.76      0.93      0.84        14
+           6       1.00      0.80      0.89        20
+           7       0.80      0.75      0.77        16
+           8       0.83      0.75      0.79        20
+           9       0.85      0.77      0.81        22
+
+    accuracy                           0.81       179
+   macro avg       0.81      0.81      0.80       179
+weighted avg       0.82      0.81      0.81       179
+
+
+Overall Accuracy Score: 0.810
+Classwise Accuracy Score: [0.91304348 0.78571429 0.64285714 0.81818182 0.92857143 0.92857143
+ 0.8        0.75       0.75       0.77272727]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 88.398			 86.034
+DecisionTreeClassifier(min_samples_split=3)							 98.678			 90.055			 84.358
+DecisionTreeClassifier(min_samples_split=5)							 97.008			 88.950			 85.475
+DecisionTreeClassifier(min_samples_split=10)							 94.642			 87.293			 83.240
+DecisionTreeClassifier(min_samples_leaf=3)							 94.433			 86.740			 87.151
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.433			 87.293			 86.034
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.433			 87.293			 86.592
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 92.693			 87.293			 85.475
+DecisionTreeClassifier(min_samples_leaf=5)							 91.510			 86.188			 83.799
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 91.580			 85.635			 82.682
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 91.510			 86.740			 83.799
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 91.510			 86.740			 83.799
+DecisionTreeClassifier(min_samples_leaf=10)							 88.170			 84.530			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 88.170			 84.530			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 88.170			 84.530			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 88.170			 84.530			 80.447
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 88.170		 Max: 100.000		 Mean: 92.819		 Median: 92.136
+Dev Set Accuracy		 Min: 84.530		 Max: 90.055		 Mean: 86.671		 Median: 86.740
+Test Set Accuracy		 Min: 80.447		 Max: 87.151		 Mean: 83.764		 Median: 83.799
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 3} is 0.90
+Best Classification Test Accuracy for {'min_samples_leaf': 3, 'min_samples_split': 2} is 0.87
+Classification report for classifier DecisionTreeClassifier(min_samples_leaf=3):
+              precision    recall  f1-score   support
+
+           0       1.00      0.95      0.97        20
+           1       0.72      0.87      0.79        15
+           2       0.67      0.80      0.73        15
+           3       0.71      0.85      0.77        20
+           4       0.74      0.82      0.78        17
+           5       0.89      1.00      0.94        17
+           6       0.90      0.82      0.86        22
+           7       0.93      0.68      0.79        19
+           8       0.76      0.72      0.74        18
+           9       0.73      0.50      0.59        16
+
+    accuracy                           0.80       179
+   macro avg       0.80      0.80      0.80       179
+weighted avg       0.81      0.80      0.80       179
+
+
+Overall Accuracy Score: 0.804
+Classwise Accuracy Score: [0.95       0.86666667 0.8        0.85       0.82352941 1.
+ 0.81818182 0.68421053 0.72222222 0.5       ]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 87.293			 83.240
+DecisionTreeClassifier(min_samples_split=3)							 98.887			 89.503			 84.358
+DecisionTreeClassifier(min_samples_split=5)							 97.356			 88.398			 83.799
+DecisionTreeClassifier(min_samples_split=10)							 94.224			 87.845			 86.034
+DecisionTreeClassifier(min_samples_leaf=3)							 94.711			 85.635			 86.034
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 94.711			 89.503			 84.358
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 94.711			 87.845			 84.916
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 92.902			 86.740			 84.916
+DecisionTreeClassifier(min_samples_leaf=5)							 91.788			 88.398			 82.682
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 91.788			 88.398			 83.240
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 91.788			 87.845			 83.799
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 91.788			 88.398			 82.682
+DecisionTreeClassifier(min_samples_leaf=10)							 86.708			 82.873			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 86.708			 83.425			 80.447
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 86.708			 83.425			 79.330
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 86.708			 83.425			 78.771
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 86.708		 Max: 100.000		 Mean: 92.593		 Median: 92.345
+Dev Set Accuracy		 Min: 82.873		 Max: 89.503		 Mean: 86.809		 Median: 87.845
+Test Set Accuracy		 Min: 78.771		 Max: 86.034		 Mean: 83.066		 Median: 83.520
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 3} is 0.90
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 10} is 0.86
+Classification report for classifier DecisionTreeClassifier(min_samples_split=10):
+              precision    recall  f1-score   support
+
+           0       0.77      1.00      0.87        10
+           1       0.58      0.64      0.61        22
+           2       0.70      0.74      0.72        19
+           3       0.93      0.81      0.87        16
+           4       0.68      0.77      0.72        22
+           5       0.92      0.71      0.80        17
+           6       0.94      0.76      0.84        21
+           7       0.81      0.93      0.87        14
+           8       0.87      0.93      0.90        14
+           9       0.86      0.79      0.83        24
+
+    accuracy                           0.79       179
+   macro avg       0.81      0.81      0.80       179
+weighted avg       0.80      0.79      0.79       179
+
+
+Overall Accuracy Score: 0.788
+Classwise Accuracy Score: [1.         0.63636364 0.73684211 0.8125     0.77272727 0.70588235
+ 0.76190476 0.92857143 0.92857143 0.79166667]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 86.740			 84.358
+DecisionTreeClassifier(min_samples_split=3)							 99.374			 90.055			 85.475
+DecisionTreeClassifier(min_samples_split=5)							 97.773			 88.398			 82.682
+DecisionTreeClassifier(min_samples_split=10)							 94.990			 86.188			 83.799
+DecisionTreeClassifier(min_samples_leaf=3)							 95.546			 87.845			 82.682
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 95.546			 88.398			 83.799
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 95.477			 88.950			 82.682
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 93.319			 86.188			 83.240
+DecisionTreeClassifier(min_samples_leaf=5)							 92.206			 84.530			 82.123
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 92.206			 85.635			 81.564
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 92.206			 86.188			 81.564
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 92.206			 86.740			 82.682
+DecisionTreeClassifier(min_samples_leaf=10)							 87.891			 80.663			 79.888
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 87.891			 80.663			 79.888
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 87.891			 80.663			 79.888
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 87.891			 80.663			 79.888
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 87.891		 Max: 100.000		 Mean: 93.276		 Median: 92.763
+Dev Set Accuracy		 Min: 80.663		 Max: 90.055		 Mean: 85.532		 Median: 86.188
+Test Set Accuracy		 Min: 79.888		 Max: 85.475		 Mean: 82.263		 Median: 82.682
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 3} is 0.90
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 3} is 0.85
+Classification report for classifier DecisionTreeClassifier(min_samples_split=3):
+              precision    recall  f1-score   support
+
+           0       1.00      0.85      0.92        20
+           1       0.68      0.76      0.72        17
+           2       1.00      0.79      0.88        14
+           3       0.71      0.86      0.77        14
+           4       0.68      0.83      0.75        18
+           5       0.94      0.75      0.83        20
+           6       1.00      0.90      0.95        20
+           7       0.90      0.86      0.88        21
+           8       0.75      0.68      0.71        22
+           9       0.47      0.69      0.56        13
+
+    accuracy                           0.80       179
+   macro avg       0.81      0.80      0.80       179
+weighted avg       0.83      0.80      0.81       179
+
+
+Overall Accuracy Score: 0.799
+Classwise Accuracy Score: [0.85       0.76470588 0.78571429 0.85714286 0.83333333 0.75
+ 0.9        0.85714286 0.68181818 0.69230769]
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+DecisionTreeClassifier()							 100.000			 81.215			 89.944
+DecisionTreeClassifier(min_samples_split=3)							 98.956			 79.558			 88.268
+DecisionTreeClassifier(min_samples_split=5)							 97.704			 77.901			 88.268
+DecisionTreeClassifier(min_samples_split=10)							 94.363			 77.901			 89.385
+DecisionTreeClassifier(min_samples_leaf=3)							 95.059			 78.453			 88.827
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=3)							 95.059			 77.901			 87.709
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=5)							 95.059			 78.453			 89.385
+DecisionTreeClassifier(min_samples_leaf=3, min_samples_split=10)							 92.763			 76.243			 89.385
+DecisionTreeClassifier(min_samples_leaf=5)							 92.345			 75.138			 89.385
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=3)							 92.345			 75.138			 89.944
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=5)							 92.345			 75.691			 89.944
+DecisionTreeClassifier(min_samples_leaf=5, min_samples_split=10)							 92.345			 75.691			 89.385
+DecisionTreeClassifier(min_samples_leaf=10)							 87.683			 75.691			 86.592
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=3)							 87.683			 75.691			 86.592
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=5)							 87.683			 76.243			 86.592
+DecisionTreeClassifier(min_samples_leaf=10, min_samples_split=10)							 87.683			 76.243			 86.592
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 87.683		 Max: 100.000		 Mean: 93.067		 Median: 92.554
+Dev Set Accuracy		 Min: 75.138		 Max: 81.215		 Mean: 77.072		 Median: 76.243
+Test Set Accuracy		 Min: 86.592		 Max: 89.944		 Mean: 88.513		 Median: 89.106
+
+Best Classification Train Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 1.00
+Best Classification Dev Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 0.81
+Best Classification Test Accuracy for {'min_samples_leaf': 1, 'min_samples_split': 2} is 0.90
+Classification report for classifier DecisionTreeClassifier():
+              precision    recall  f1-score   support
+
+           0       0.89      0.81      0.85        21
+           1       0.79      0.92      0.85        12
+           2       0.83      0.88      0.86        17
+           3       0.86      0.90      0.88        21
+           4       0.95      0.78      0.86        23
+           5       0.78      0.95      0.86        19
+           6       1.00      0.95      0.97        19
+           7       0.90      0.95      0.92        19
+           8       0.79      0.79      0.79        14
+           9       0.83      0.71      0.77        14
+
+    accuracy                           0.87       179
+   macro avg       0.86      0.86      0.86       179
+weighted avg       0.87      0.87      0.87       179
+
+
+Overall Accuracy Score: 0.866
+Classwise Accuracy Score: [0.80952381 0.91666667 0.88235294 0.9047619  0.7826087  0.94736842
+ 0.94736842 0.94736842 0.78571429 0.71428571]
+           SVM  DecisionTree
+1     1.000000      0.882682
+2     1.000000      0.871508
+3     1.000000      0.860335
+4     0.994413      0.854749
+5     0.988827      0.899441
+Mean  0.996648      0.873743
+STD   0.004469      0.016037
