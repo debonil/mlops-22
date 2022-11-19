@@ -1,7 +1,5 @@
 import sys
-sys.path.append('.')
-
-from util import generate_h_param_comb
+from mlops.utils import generate_h_param_comb
 
 # test case to check if all the combinations of the hyper parameters are indeed getting created
 def test_generate_h_param_comb():

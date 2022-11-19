@@ -3,7 +3,7 @@ from unittest import result
 from sklearn import datasets, metrics, svm
 from sklearn import tree
 import statistics
-from util import confusionMatrixAndAccuracyReport, data_preprocess, data_viz, h_param_tuning, train_dev_test_split, visualize_pred_data
+from utils import confusionMatrixAndAccuracyReport, data_preprocess, data_viz, h_param_tuning, train_dev_test_split, visualize_pred_data
 import pandas as pd
 import numpy as np
 from joblib import dump
