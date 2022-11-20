@@ -23,14 +23,14 @@ print(args.clf_name, args.random_state)
 
 digits = datasets.load_digits()
 
-#data_viz(digits)
+# data_viz(digits)
 
 data, label = data_preprocess(digits)
 # housekeeping
 del digits
 
 gamma_list = [0.01, 0.005, 0.001, 0.0005, 0.0001]
-c_list = [0.1, 0.2, 0.5, 0.7, 1, 2, 5, 7, 10]
+c_list = [0.1, 0.5, 1, 2, 10]
 h_param_comb_svm = [{"gamma": g, "C": c} for g in gamma_list for c in c_list]
 
 min_samples_split_list = [2, 3, 5, 10]
@@ -65,9 +65,21 @@ print(
     f"Classification report for classifier {clf}:\n"
     f"{metrics.classification_report(y_test, predicted)}\n"
 )
-confusionMatrixAndAccuracyReport(y_test, predicted)
-dump(best_model, f'models/{best_model}')
+#confusionMatrixAndAccuracyReport(y_test, predicted)
+model_loc = f'models/{best_model}.joblib'
+dump(best_model, model_loc)
 
 
 result[i].append(statistics.mean(result[i]))
 result[i].append(statistics.stdev(result[i]))
+
+accuracy = metrics.accuracy_score(y_test, predicted)
+macrof1 = metrics.f1_score(y_test, predicted, average='macro')
+
+out_text = [f'test accuracy: {accuracy}', f'test macro-f1: {macrof1}',
+            f'model saved at ./{model_loc}']
+
+filename = f"results/{args.clf_name}_{args.random_state}.txt"
+
+with open(filename, 'w') as file:
+    file.writelines("% s\n" % data for data in out_text)

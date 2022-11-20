@@ -1,0 +1,3 @@
+test accuracy: 0.9776536312849162
+test macro-f1: 0.9796629296629297
+model saved at ./models/SVC(C=2, gamma=0.001).joblib
