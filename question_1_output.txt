@@ -1,0 +1,13 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.7, pytest-7.1.3, pluggy-1.0.0 -- C:\Users\debon\AppData\Local\Programs\Python\Python310\python.exe
+cachedir: .pytest_cache
+rootdir: G:\MTechClasses\ML-Ops\mlops-22
+collecting ... collected 5 items
+
+tests/test_example.py::test_example PASSED                               [ 20%]
+tests/test_example.py::test_non_test_file PASSED                         [ 40%]
+tests/test_util.py::test_generate_h_param_comb PASSED                    [ 60%]
+tests/test_util.py::test_data_split_random_state_same PASSED             [ 80%]
+tests/test_util.py::test_data_split_random_state_different PASSED        [100%]
+
+============================== 5 passed in 1.76s ==============================

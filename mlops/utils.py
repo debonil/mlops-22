@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from statistics import mean, median
 import seaborn as sns
 
+
 def data_viz(data_to_viz):
     _, axes = plt.subplots(nrows=1, ncols=4, figsize=(10, 3))
     for ax, image, label in zip(axes, data_to_viz.images, data_to_viz.target):
@@ -13,24 +14,25 @@ def data_viz(data_to_viz):
         ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
         ax.set_title("Training: %i" % label)
 
+
 def data_preprocess(data):
     # flatten the images
     n_samples = len(data.images)
     x = data.images.reshape((n_samples, -1))
-    return x,data.target
+    return x, data.target
 
-def train_dev_test_split(data, label, train_frac, dev_frac):
+
+def train_dev_test_split(data, label, train_frac, dev_frac, random_state=None):
 
     dev_test_frac = 1 - train_frac
     x_train, x_dev_test, y_train, y_dev_test = train_test_split(
-        data, label, test_size=dev_test_frac, shuffle=True
+        data, label, test_size=dev_test_frac, shuffle=True, random_state=random_state
     )
     x_test, x_dev, y_test, y_dev = train_test_split(
-        x_dev_test, y_dev_test, test_size=(dev_frac) / dev_test_frac, shuffle=True
+        x_dev_test, y_dev_test, test_size=(dev_frac) / dev_test_frac, shuffle=True, random_state=random_state
     )
 
     return x_train, y_train, x_dev, y_dev, x_test, y_test
-
 
 
 def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, x_test, y_test, metric):
@@ -56,19 +58,19 @@ def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, x_test, y_
         # Learn the digits on the train subset
         clf.fit(x_train, y_train)
 
-
         # Predict the value of the digit on the test subset
         pred_dev = clf.predict(x_dev)
-        acc_dev= metric(y_dev, pred_dev)
+        acc_dev = metric(y_dev, pred_dev)
         pred_test = clf.predict(x_test)
-        acc_test= metric(y_test, pred_test)
+        acc_test = metric(y_test, pred_test)
         pred_train = clf.predict(x_train)
-        acc_train= metric(y_train, pred_train)
+        acc_train = metric(y_train, pred_train)
 
         metric_list_train.append(acc_train)
         metric_list_dev.append(acc_dev)
         metric_list_test.append(acc_test)
-        print(f"{clf}\t\t\t\t\t\t\t {acc_train*100:.3f}\t\t\t {acc_dev*100:.3f}\t\t\t {acc_test*100:.3f}")
+        print(
+            f"{clf}\t\t\t\t\t\t\t {acc_train*100:.3f}\t\t\t {acc_dev*100:.3f}\t\t\t {acc_test*100:.3f}")
         # 3. identify the combination-of-hyper-parameter for which validation set accuracy is the highest.
         if acc_dev > best_metric_dev:
             best_metric_dev = acc_dev
@@ -83,10 +85,13 @@ def h_param_tuning(h_param_comb, clf, x_train, y_train, x_dev, y_dev, x_test, y_
     print(f"Train Set Accuracy\t\t Min: {min(metric_list_train)*100:.3f}\t\t Max: {max(metric_list_train)*100:.3f}\t\t Mean: {mean(metric_list_train)*100:.3f}\t\t Median: {median(metric_list_train)*100:.3f}")
     print(f"Dev Set Accuracy\t\t Min: {min(metric_list_dev)*100:.3f}\t\t Max: {max(metric_list_dev)*100:.3f}\t\t Mean: {mean(metric_list_dev)*100:.3f}\t\t Median: {median(metric_list_dev)*100:.3f}")
     print(f"Test Set Accuracy\t\t Min: {min(metric_list_test)*100:.3f}\t\t Max: {max(metric_list_test)*100:.3f}\t\t Mean: {mean(metric_list_test)*100:.3f}\t\t Median: {median(metric_list_test)*100:.3f}")
-    
-    print(f"\nBest Classification Train Accuracy for {best_h_params_train} is {best_metric_train:.2f}")
-    print(f"Best Classification Dev Accuracy for {best_h_params_dev} is {best_metric_dev:.2f}")
-    print(f"Best Classification Test Accuracy for {best_h_params_test} is {best_metric_test:.2f}")
+
+    print(
+        f"\nBest Classification Train Accuracy for {best_h_params_train} is {best_metric_train:.2f}")
+    print(
+        f"Best Classification Dev Accuracy for {best_h_params_dev} is {best_metric_dev:.2f}")
+    print(
+        f"Best Classification Test Accuracy for {best_h_params_test} is {best_metric_test:.2f}")
     clf.set_params(**best_h_params_test)
     return clf, best_metric_test, best_h_params_test
 
@@ -100,7 +105,8 @@ def visualize_pred_data(X_test, predicted):
         ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
         ax.set_title(f"Prediction: {prediction}")
 
-def generate_h_param_comb(gamma_list,c_list):
+
+def generate_h_param_comb(gamma_list, c_list):
     return [{"gamma": g, "C": c} for g in gamma_list for c in c_list]
 
 
@@ -118,8 +124,7 @@ def confusionMatrixAndAccuracyReport(Y_test, Y_pred):
     plt.ylabel('Actual label')
     plt.xlabel('Predicted label')
     sns.heatmap(data=cm, annot=True, square=True,  cmap='Blues', fmt='g')
-    
+
     plt.show()
     print('Overall Accuracy Score: {0:3.3f}'.format(overallAccuracy))
     print('Classwise Accuracy Score: {0}'.format(classwiseAccuracy))
-
