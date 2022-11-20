@@ -1,0 +1,160 @@
+svm 49
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.786			 10.497			 5.028
+SVC(C=0.2, gamma=0.01)							 12.387			 11.050			 5.028
+SVC(C=0.5, gamma=0.01)							 100.000			 20.442			 22.905
+SVC(C=0.7, gamma=0.01)							 100.000			 46.409			 44.134
+SVC(C=1, gamma=0.01)							 100.000			 85.083			 83.799
+SVC(C=2, gamma=0.01)							 100.000			 86.188			 84.358
+SVC(C=5, gamma=0.01)							 100.000			 86.188			 84.358
+SVC(C=7, gamma=0.01)							 100.000			 86.188			 84.358
+SVC(C=10, gamma=0.01)							 100.000			 86.188			 84.358
+SVC(C=0.1, gamma=0.005)							 27.209			 18.785			 21.788
+SVC(C=0.2, gamma=0.005)							 87.404			 62.983			 64.804
+SVC(C=0.5, gamma=0.005)							 100.000			 87.293			 91.620
+SVC(C=0.7, gamma=0.005)							 100.000			 92.265			 94.972
+SVC(C=1, gamma=0.005)							 100.000			 94.475			 96.648
+SVC(C=2, gamma=0.005)							 100.000			 94.475			 97.207
+SVC(C=5, gamma=0.005)							 100.000			 94.475			 97.207
+SVC(C=7, gamma=0.005)							 100.000			 94.475			 97.207
+SVC(C=10, gamma=0.005)							 100.000			 94.475			 97.207
+SVC(C=0.1, gamma=0.001)							 97.286			 97.238			 97.765
+SVC(C=0.2, gamma=0.001)							 98.747			 99.448			 98.883
+SVC(C=0.5, gamma=0.001)							 99.791			 100.000			 98.883
+SVC(C=0.7, gamma=0.001)							 99.930			 100.000			 98.883
+SVC(C=1, gamma=0.001)							 99.930			 100.000			 98.883
+SVC(C=2, gamma=0.001)							 100.000			 100.000			 98.324
+SVC(C=5, gamma=0.001)							 100.000			 100.000			 98.324
+SVC(C=7, gamma=0.001)							 100.000			 100.000			 98.324
+SVC(C=10, gamma=0.001)							 100.000			 100.000			 98.324
+SVC(C=0.1, gamma=0.0005)							 96.242			 96.133			 97.207
+SVC(C=0.2, gamma=0.0005)							 98.121			 98.343			 98.324
+SVC(C=0.5, gamma=0.0005)							 99.165			 100.000			 98.883
+SVC(C=0.7, gamma=0.0005)							 99.513			 100.000			 98.883
+SVC(C=1, gamma=0.0005)							 99.861			 100.000			 98.883
+SVC(C=2, gamma=0.0005)							 99.930			 100.000			 98.883
+SVC(C=5, gamma=0.0005)							 100.000			 100.000			 98.324
+SVC(C=7, gamma=0.0005)							 100.000			 100.000			 98.324
+SVC(C=10, gamma=0.0005)							 100.000			 100.000			 98.324
+SVC(C=0.1, gamma=0.0001)							 91.441			 90.055			 92.737
+SVC(C=0.2, gamma=0.0001)							 94.154			 93.370			 96.089
+SVC(C=0.5, gamma=0.0001)							 96.729			 97.238			 97.765
+SVC(C=0.7, gamma=0.0001)							 97.286			 97.238			 97.765
+SVC(C=1, gamma=0.0001)							 97.912			 98.895			 98.324
+SVC(C=2, gamma=0.0001)							 98.608			 98.895			 98.324
+SVC(C=5, gamma=0.0001)							 99.513			 98.343			 98.324
+SVC(C=7, gamma=0.0001)							 99.652			 98.895			 98.883
+SVC(C=10, gamma=0.0001)							 99.722			 99.448			 98.883
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.786		 Max: 100.000		 Mean: 93.363		 Median: 99.930
+Dev Set Accuracy		 Min: 10.497		 Max: 100.000		 Mean: 87.010		 Median: 97.238
+Test Set Accuracy		 Min: 5.028		 Max: 98.883		 Mean: 86.816		 Median: 97.765
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 0.5} is 1.00
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 0.2} is 0.99
+Classification report for classifier SVC(C=0.2, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        19
+           1       1.00      1.00      1.00        16
+           2       1.00      1.00      1.00        21
+           3       1.00      1.00      1.00         9
+           4       1.00      1.00      1.00        17
+           5       1.00      1.00      1.00        23
+           6       1.00      1.00      1.00        15
+           7       0.94      1.00      0.97        16
+           8       0.95      1.00      0.98        21
+           9       1.00      0.91      0.95        22
+
+    accuracy                           0.99       179
+   macro avg       0.99      0.99      0.99       179
+weighted avg       0.99      0.99      0.99       179
+
+
+Overall Accuracy Score: 0.989
+Classwise Accuracy Score: [1.         1.         1.         1.         1.         1.
+ 1.         1.         1.         0.90909091]
+svm 41
+Classifier 							|	 Train Acc 	|	 Dev Acc 	|	 Test Acc 
+
+SVC(C=0.1, gamma=0.01)							 10.369			 8.840			 9.497
+SVC(C=0.2, gamma=0.01)							 21.364			 9.945			 9.497
+SVC(C=0.5, gamma=0.01)							 100.000			 25.967			 24.581
+SVC(C=0.7, gamma=0.01)							 100.000			 45.856			 46.369
+SVC(C=1, gamma=0.01)							 100.000			 75.138			 76.536
+SVC(C=2, gamma=0.01)							 100.000			 76.243			 78.771
+SVC(C=5, gamma=0.01)							 100.000			 76.243			 78.771
+SVC(C=7, gamma=0.01)							 100.000			 76.243			 78.771
+SVC(C=10, gamma=0.01)							 100.000			 76.243			 78.771
+SVC(C=0.1, gamma=0.005)							 37.300			 30.387			 27.933
+SVC(C=0.2, gamma=0.005)							 83.020			 56.354			 57.542
+SVC(C=0.5, gamma=0.005)							 100.000			 92.818			 91.620
+SVC(C=0.7, gamma=0.005)							 100.000			 94.475			 93.855
+SVC(C=1, gamma=0.005)							 100.000			 95.580			 97.207
+SVC(C=2, gamma=0.005)							 100.000			 95.580			 97.207
+SVC(C=5, gamma=0.005)							 100.000			 95.580			 97.207
+SVC(C=7, gamma=0.005)							 100.000			 95.580			 97.207
+SVC(C=10, gamma=0.005)							 100.000			 95.580			 97.207
+SVC(C=0.1, gamma=0.001)							 97.564			 97.790			 96.648
+SVC(C=0.2, gamma=0.001)							 99.095			 98.343			 96.648
+SVC(C=0.5, gamma=0.001)							 99.791			 98.895			 97.765
+SVC(C=0.7, gamma=0.001)							 99.861			 99.448			 97.765
+SVC(C=1, gamma=0.001)							 99.930			 100.000			 98.324
+SVC(C=2, gamma=0.001)							 100.000			 100.000			 98.324
+SVC(C=5, gamma=0.001)							 100.000			 99.448			 98.324
+SVC(C=7, gamma=0.001)							 100.000			 99.448			 98.324
+SVC(C=10, gamma=0.001)							 100.000			 99.448			 98.324
+SVC(C=0.1, gamma=0.0005)							 96.590			 97.238			 96.648
+SVC(C=0.2, gamma=0.0005)							 98.330			 97.790			 96.648
+SVC(C=0.5, gamma=0.0005)							 99.443			 98.895			 97.207
+SVC(C=0.7, gamma=0.0005)							 99.722			 98.895			 97.765
+SVC(C=1, gamma=0.0005)							 99.791			 99.448			 98.324
+SVC(C=2, gamma=0.0005)							 99.930			 99.448			 98.324
+SVC(C=5, gamma=0.0005)							 100.000			 99.448			 98.324
+SVC(C=7, gamma=0.0005)							 100.000			 99.448			 98.324
+SVC(C=10, gamma=0.0005)							 100.000			 99.448			 98.324
+SVC(C=0.1, gamma=0.0001)							 91.301			 93.370			 89.944
+SVC(C=0.2, gamma=0.0001)							 94.433			 96.133			 93.855
+SVC(C=0.5, gamma=0.0001)							 96.799			 97.238			 96.089
+SVC(C=0.7, gamma=0.0001)							 97.286			 97.238			 96.648
+SVC(C=1, gamma=0.0001)							 98.121			 97.790			 96.648
+SVC(C=2, gamma=0.0001)							 98.956			 98.343			 97.207
+SVC(C=5, gamma=0.0001)							 99.582			 99.448			 98.324
+SVC(C=7, gamma=0.0001)							 99.582			 98.895			 98.324
+SVC(C=10, gamma=0.0001)							 99.791			 98.343			 98.324
+
+	* Min, max, mean, median of the accuracies obtained in previous step : *	
+
+Train Set Accuracy		 Min: 10.369		 Max: 100.000		 Mean: 93.732		 Median: 99.930
+Dev Set Accuracy		 Min: 8.840		 Max: 100.000		 Mean: 86.274		 Median: 97.238
+Test Set Accuracy		 Min: 9.497		 Max: 98.324		 Mean: 85.872		 Median: 97.207
+
+Best Classification Train Accuracy for {'gamma': 0.01, 'C': 0.5} is 1.00
+Best Classification Dev Accuracy for {'gamma': 0.001, 'C': 1} is 1.00
+Best Classification Test Accuracy for {'gamma': 0.001, 'C': 1} is 0.98
+Classification report for classifier SVC(C=1, gamma=0.001):
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        13
+           1       0.94      1.00      0.97        17
+           2       1.00      1.00      1.00        23
+           3       0.95      0.95      0.95        20
+           4       1.00      1.00      1.00        13
+           5       1.00      1.00      1.00        22
+           6       1.00      1.00      1.00        25
+           7       1.00      1.00      1.00        15
+           8       0.93      0.93      0.93        15
+           9       1.00      0.94      0.97        16
+
+    accuracy                           0.98       179
+   macro avg       0.98      0.98      0.98       179
+weighted avg       0.98      0.98      0.98       179
+
+
+Overall Accuracy Score: 0.983
+Classwise Accuracy Score: [1.         1.         1.         0.95       1.         1.
+ 1.         1.         0.93333333 0.9375    ]

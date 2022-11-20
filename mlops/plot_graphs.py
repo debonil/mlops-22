@@ -7,11 +7,23 @@ from utils import confusionMatrixAndAccuracyReport, data_preprocess, data_viz, h
 import pandas as pd
 import numpy as np
 from joblib import dump
+import argparse
 # Starts actual execution
+parser = argparse.ArgumentParser(
+    prog='plot_graphs',
+    description='MLOpsFinalExam-M21AIE225',
+    epilog='Text at the bottom of help')
+# option that takes a value
+parser.add_argument('-c', '--clf_name',
+                    choices=['svm', 'tree'], action='store')
+parser.add_argument('-v', '--random_state', action='store')  # on/off flag
+
+args = parser.parse_args()
+print(args.clf_name, args.random_state)
 
 digits = datasets.load_digits()
 
-data_viz(digits)
+#data_viz(digits)
 
 data, label = data_preprocess(digits)
 # housekeeping
@@ -30,38 +42,32 @@ model_of_choices = [svm.SVC(), tree.DecisionTreeClassifier()]
 hp_of_choices = [h_param_comb_svm, h_param_comb_dtree]
 metric = metrics.accuracy_score
 result = [[], []]
-for i, clf in enumerate(model_of_choices):
-    for k in range(5):
 
-        X_train, y_train, X_dev, y_dev, X_test, y_test = train_dev_test_split(
-            data, label, 0.8, 0.1
-        )
+i = 0 if args.clf_name == 'svm' else 1
+clf = model_of_choices[i]
+# for i, clf in enumerate(model_of_choices):
+# for k in range(5):
 
-        best_model, best_metric, best_h_params = h_param_tuning(hp_of_choices[i], clf, X_train, y_train, X_dev, y_dev, X_test, y_test, metric)
+X_train, y_train, X_dev, y_dev, X_test, y_test = train_dev_test_split(
+    data, label, 0.8, 0.1, random_state=int(args.random_state)
+)
 
-        predicted = best_model.predict(X_test)
-        result[i].append(best_metric)
-        visualize_pred_data(X_test, predicted)
+best_model, best_metric, best_h_params = h_param_tuning(
+    hp_of_choices[i], clf, X_train, y_train, X_dev, y_dev, X_test, y_test, metric)
 
-        # 4. report the test set accurancy with that best model.
-        # PART: Compute evaluation metrics
-        print(
-            f"Classification report for classifier {clf}:\n"
-            f"{metrics.classification_report(y_test, predicted)}\n"
-        )
-        confusionMatrixAndAccuracyReport(y_test, predicted)
-        dump(best_model, f'models/{best_model}')
+predicted = best_model.predict(X_test)
+result[i].append(best_metric)
+#visualize_pred_data(X_test, predicted)
 
-
-result[0].append(statistics.mean(result[0]))
-result[0].append(statistics.stdev(result[0]))
-result[1].append(statistics.mean(result[1]))
-result[1].append(statistics.stdev(result[1]))
-result_df = pd.DataFrame(np.transpose(result), index=[
-                         1, 2, 3, 4, 5, 'Mean', 'STD'], columns=['SVM', 'DecisionTree'])
+# 4. report the test set accurancy with that best model.
+# PART: Compute evaluation metrics
+print(
+    f"Classification report for classifier {clf}:\n"
+    f"{metrics.classification_report(y_test, predicted)}\n"
+)
+confusionMatrixAndAccuracyReport(y_test, predicted)
+dump(best_model, f'models/{best_model}')
 
 
-print(result_df)
-
-with open('readme.md', 'w') as f:
-    print(result_df, file=f)
+result[i].append(statistics.mean(result[i]))
+result[i].append(statistics.stdev(result[i]))
