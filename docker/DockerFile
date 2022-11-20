@@ -4,4 +4,4 @@ COPY mlops /exp/mlops
 COPY ./requirements.txt /exp/requirements.txt
 RUN pip3 install --no-cache-dir -r /exp/requirements.txt
 WORKDIR /exp
-CMD ["python3", "./mlops/plot_graphs.py"]
+ENTRYPOINT  ["python3", "./mlops/plot_graphs.py"]

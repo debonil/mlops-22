@@ -1,0 +1,3 @@
+test accuracy: 0.7877094972067039
+test macro-f1: 0.7812792924889699
+model saved at ./models/DecisionTreeClassifier(min_samples_split=3).joblib

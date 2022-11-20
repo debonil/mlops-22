@@ -8,6 +8,9 @@ import pandas as pd
 import numpy as np
 from joblib import dump
 import argparse
+import os
+print(os.pardir)
+print(os.listdir())
 # Starts actual execution
 parser = argparse.ArgumentParser(
     prog='plot_graphs',
@@ -20,6 +23,8 @@ parser.add_argument('-v', '--random_state', action='store')  # on/off flag
 
 args = parser.parse_args()
 print(args.clf_name, args.random_state)
+
+random_state = int(args.random_state) if args.random_state else 0
 
 digits = datasets.load_digits()
 
@@ -49,7 +54,7 @@ clf = model_of_choices[i]
 # for k in range(5):
 
 X_train, y_train, X_dev, y_dev, X_test, y_test = train_dev_test_split(
-    data, label, 0.8, 0.1, random_state=int(args.random_state)
+    data, label, 0.8, 0.1, random_state=random_state
 )
 
 best_model, best_metric, best_h_params = h_param_tuning(
@@ -79,7 +84,7 @@ macrof1 = metrics.f1_score(y_test, predicted, average='macro')
 out_text = [f'test accuracy: {accuracy}', f'test macro-f1: {macrof1}',
             f'model saved at ./{model_loc}']
 
-filename = f"results/{args.clf_name}_{args.random_state}.txt"
+filename = f"results/{args.clf_name}_{random_state}.txt"
 
 with open(filename, 'w') as file:
     file.writelines("% s\n" % data for data in out_text)
